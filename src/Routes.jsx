@@ -1,7 +1,6 @@
-import './App.css';
 // Page Render imports
-import About from './About';
-import App from './App.jsx';
+import About from './About/About';
+import Home from './Home/Home.jsx';
 // react-router-dom abstractions
 import {
   createBrowserRouter,
@@ -12,7 +11,7 @@ function AppRoutes() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <App />,
+      element: <Home />,
     },
     {
       path: '/about',

@@ -5,7 +5,7 @@ function About() {
     <>
       <p>About page</p>
       <Link to='/'>
-        <button>Homepage</button>
+        <button>Home page</button>
       </Link>
     </>
   );
