@@ -1,5 +1,5 @@
+import { Link } from 'react-router-dom';
 import './Home.css';
-import { Link } from "react-router-dom";
 
 function Home() {
   /**
@@ -19,10 +19,43 @@ function Home() {
  */
   return (
     <>
-      <p>Hello Home page</p>
-      <Link to='/about'>
-        <button>About page</button>
-      </Link>
+      {/* Nav */}
+      <nav>
+        <div className="logo">
+          <p>#VANLIFE</p>
+        </div>
+        <div className="pages">
+          <ul>
+            <Link to='/about'>
+              <li>About</li>
+            </Link>
+            <li>Vans</li>
+          </ul>
+        </div>
+      </nav>
+      {/* Main */}
+      <main>
+        {/* image */}
+        <div className="homecontainer">
+          <img className='homeimg' src='../../public/vanlifehome.png' />
+          {/* Hero text */}
+          <p className='herotxt'>
+            You got the travel plans,
+            we got the travel vans.
+          </p>
+          <p className='herosubtxt'>
+            Add adventure to your life by joining the #vanlife movement. Rent the perfect van to make your perfect road trip.
+          </p>
+          <Link to='/'>
+            <button className='findvanbutton'>
+              <p>Find your van</p>
+            </button>
+          </Link>
+        </div>
+      </main>
+      <footer>
+        <p>Ⓒ 2022 #VANLIFE</p>
+      </footer>
     </>
   );
 }
