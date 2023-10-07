@@ -30,6 +30,14 @@ li {
   line-height: 23px;
 }
 
+li:hover {
+  text-decoration: underline overline;
+}
+
+.logo:hover {
+  text-decoration: underline overline;
+}
+
 /* Main */
 .homecontainer {
   width: full;
