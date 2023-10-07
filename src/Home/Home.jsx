@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Home.css';
+import Nav from '../components/Nav/Nav';
+import Footer from '../components/Footer/Footer';
 
 function Home() {
   /**
@@ -19,25 +21,12 @@ function Home() {
  */
   return (
     <>
-      {/* Nav */}
-      <nav>
-        <div className="logo">
-          <p>#VANLIFE</p>
-        </div>
-        <div className="pages">
-          <ul>
-            <Link to='/about'>
-              <li>About</li>
-            </Link>
-            <li>Vans</li>
-          </ul>
-        </div>
-      </nav>
+      <Nav />
       {/* Main */}
       <main>
         {/* image */}
         <div className="homecontainer">
-          <img className='homeimg' src='../../public/vanlifehome.png' />
+          <img className='homeimg' src='/vanlifehome.png' />
           {/* Hero text */}
           <p className='herotxt'>
             You got the travel plans,
@@ -53,9 +42,7 @@ function Home() {
           </Link>
         </div>
       </main>
-      <footer>
-        <p>Ⓒ 2022 #VANLIFE</p>
-      </footer>
+      <Footer />
     </>
   );
 }

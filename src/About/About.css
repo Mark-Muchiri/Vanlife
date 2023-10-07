@@ -1,0 +1,80 @@
+img.abtimg {
+  width: 100%;
+  height: 234px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.abt-title-cont {
+  padding: 27px;
+}
+
+.abt-title-cont>h2 {
+  all: unset;
+  color: #161616;
+  font-family: Inter;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 38px;
+}
+
+.abt-p-cont {
+  padding-left: 27px;
+  padding-right: 27px;
+}
+
+.abt-p-cont>p {
+  color: #161616;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.abt-card {
+  margin: 53px auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 485px;
+  height: 198px;
+  border-radius: 5px;
+  background: #f3b66c;
+}
+
+.abt-card>p {
+  color: #161616;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  margin-left: -50px;
+  width: 360px;
+}
+
+.abt-card>button {
+  margin-top: 20px;
+  margin-left: -235px;
+  padding: 12px 22px 13px 22px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: #161616;
+  transition: background-color 0.3s ease;
+  /* Add a transition for a smooth effect */
+}
+
+/* Add the click effect on :active */
+.abt-card>button:active {
+  background: #000;
+  /* Change the background color when the button is clicked */
+}
+
+
+.abt-card>button>p {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
