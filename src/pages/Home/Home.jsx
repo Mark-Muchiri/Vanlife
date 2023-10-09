@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Home.css';
-import Nav from '../components/Nav/Nav';
-import Footer from '../components/Footer/Footer';
+import Nav from '../../components/Nav/Nav';
+import Footer from '../../components/Footer/Footer';
 
 function Home() {
   return (
@@ -18,7 +18,9 @@ function Home() {
             we got the travel vans.
           </p>
           <p className='herosubtxt'>
-            Add adventure to your life by joining the #vanlife movement. Rent the perfect van to make your perfect road trip.
+            Add adventure to your life by joining the
+            #vanlife movement. Rent the perfect van to
+            make your perfect road trip.
           </p>
           <Link to='/'>
             <button className='findvanbutton'>
