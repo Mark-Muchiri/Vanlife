@@ -6,7 +6,7 @@ import './server.js';
 // react-router-dom abstractions
 import {
   createBrowserRouter,
-  RouterProvider
+  RouterProvider,
 } from "react-router-dom";
 
 /**
@@ -35,9 +35,11 @@ function AppRoutes() {
   ]);
 
   return (
-    <RouterProvider
-      router={router}
-    />
+    <>
+      <RouterProvider
+        router={router}
+      />
+    </>
   );
 }
 export default AppRoutes;
