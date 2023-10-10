@@ -25,10 +25,7 @@ function Vans() {
       <p>{filterItem}</p>
     </div>
   ));
-  /**
-  * Challenge: Wrap the contents of the "van-tile" div in a 
-  * Link that sends the user to `/vans/${van-id-here}`.
-  */
+  
   // Map the data through cards
   const vanElements = data.map(van => (
     <div key={van.id} className="van-tile">
