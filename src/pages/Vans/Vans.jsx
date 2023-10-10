@@ -2,6 +2,7 @@ import './Vans.css';
 import Footer from "../../components/Footer/Footer";
 import Nav from "../../components/Nav/Nav";
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Vans() {
   // State to hold the fetched data
@@ -24,19 +25,24 @@ function Vans() {
       <p>{filterItem}</p>
     </div>
   ));
-
+  /**
+  * Challenge: Wrap the contents of the "van-tile" div in a 
+  * Link that sends the user to `/vans/${van-id-here}`.
+  */
   // Map the data through cards
   const vanElements = data.map(van => (
     <div key={van.id} className="van-tile">
-      <img src={van.imageUrl} />
-      <div className="van-info">
-        <h3>{van.name}</h3>
-        <div className="van-price">
-          <p>${van.price}</p>
-          <span>/day</span>
+      <Link to={`/vans/${van.id}`}>
+        <img src={van.imageUrl} />
+        <div className="van-info">
+          <h3>{van.name}</h3>
+          <div className="van-price">
+            <p>${van.price}</p>
+            <span>/day</span>
+          </div>
         </div>
-      </div>
-      <i className={`van-type ${van.type} selected`}>{van.type}</i>
+        <i className={`van-type ${van.type} selected`}>{van.type}</i>
+      </Link>
     </div>
   ));
 
