@@ -11,7 +11,7 @@ function Vans() {
   // useEffect to fetch data when the component mounts
   useEffect(() => {
     async function getVans() {
-      const res = await fetch('api/vans');
+      const res = await fetch('/api/vans');
       const data = await res.json();
       setData(data.vans);
     }
@@ -25,7 +25,7 @@ function Vans() {
       <p>{filterItem}</p>
     </div>
   ));
-  
+
   // Map the data through cards
   const vanElements = data.map(van => (
     <div key={van.id} className="van-tile">
