@@ -1,5 +1,5 @@
 import "./VanDetail.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Nav from "../../components/Nav/Nav";
 import { useEffect, useState } from "react";
@@ -31,13 +31,16 @@ function VanDetail() {
 		<>
 			<Nav />
 			<div className='van-detail-cont'>
-				<div className='back'>
-					<img src='/leftArrow.svg' alt='back arrow icon' />
-					<p>Back to all vans</p>
-        </div>
-        <div className="img-detail-cont">
-          <img src={van.imageUrl} alt="" />
-        </div>
+				<Link to='/vans'>
+					<div className='back'>
+						<img src='/leftArrow.svg' alt='back arrow icon' />
+						<p>Back to all vans</p>
+					</div>
+				</Link>
+				<div className='img-detail-cont'>
+					<img src={van.imageUrl} alt='' />
+					<i></i>
+				</div>
 			</div>
 			<Footer />
 		</>

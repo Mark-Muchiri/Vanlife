@@ -77,7 +77,6 @@ main>h1 {
 .van-info {
   display: flex;
   justify-content: space-between;
-  margin-bottom: -23px;
 }
 
 .van-price {
@@ -100,8 +99,8 @@ main>h1 {
   font-family: Montserrat;
   font-size: 14px;
   font-weight: 500;
-  line-height: 31.662px;
-  margin-top: -5px;
+  line-height: 31px;
+  margin-top: -10px;
 }
 
 .van-type {
@@ -111,8 +110,6 @@ main>h1 {
   font-weight: 500;
   border: none;
   border-radius: 5px;
-  background-color: #FFEAD0;
-  color: #4D4D4D;
   cursor: pointer;
   transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -159,5 +156,4 @@ main>h1 {
 
 i[class*='van-type-'] {
   padding: 7px 14px;
-  cursor: pointer;
 }
