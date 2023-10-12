@@ -26,14 +26,8 @@
   font-weight: 800;
   line-height: 42px;
   position: absolute;
-  top: 15%;
+  top: 10%;
   background: unset;
-}
-
-@media (max-width: 393px) {
-  /* .homecontainer .herotxt {
-    top: 10%;
-  } */
 }
 
 .homecontainer .herosubtxt {
@@ -54,7 +48,7 @@ a {
 
 .findvanbutton {
   position: absolute;
-  top: 68%;
+  top: 73%;
   left: 50%;
   transform: translateX(-50%);
   width: 91%;

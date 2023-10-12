@@ -29,7 +29,8 @@
 
 .img-detail-cont img {
   width: 100%;
-  height: 490px;
-  border-radius: 5px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 7px;
   background: lightgray 50% / cover no-repeat;
 }
