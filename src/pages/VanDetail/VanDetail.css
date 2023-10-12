@@ -27,10 +27,19 @@
   padding-bottom: 30px;
 }
 
+@media (max-width:450px; ) {
+  .img-detail-cont img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+  }
+}
+
 .img-detail-cont img {
   width: 100%;
-  height: 450px;
+  height: 340px;
   object-fit: cover;
+  object-position: 50% 85%;
   border-radius: 7px;
   background: lightgray 50% / cover no-repeat;
 }
