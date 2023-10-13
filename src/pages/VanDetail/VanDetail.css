@@ -43,3 +43,73 @@
   border-radius: 7px;
   background: lightgray 50% / cover no-repeat;
 }
+
+.vantype-container {
+  padding-top: 40px;
+}
+
+.img-detail-cont h1 {
+  padding-top: 20px;
+}
+
+.van-detail-price {
+  display: flex;
+  justify-content: start;
+  padding-top: 15px;
+}
+
+.van-detail-price p {
+  color: #161616;
+  text-align: right;
+  font-family: Inter;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 31.662px;
+}
+
+.van-detail-price span {
+  color: #161616;
+  text-align: right;
+  font-family: Montserrat;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 31px;
+}
+
+.van-description {
+  padding-top: 15px;
+}
+
+.van-description p {
+  color: #161616;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.rentvanbutton {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  height: 49.832px;
+  border-style: unset;
+  border-radius: 5px;
+  background: #FF8C38;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Add the click effect on :active */
+.rentvanbutton:active {
+  background: #FF6B00;
+  /* Change the background color when the button is clicked */
+}
+
+
+.rentvanbutton p {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 32px;
+}

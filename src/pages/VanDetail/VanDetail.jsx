@@ -25,6 +25,7 @@ function VanDetail() {
 		getVan();
 	}, [params.id]);
 
+	console.log(van);
 	return (
 		<>
 			<div className='van-detail-cont'>
@@ -36,7 +37,22 @@ function VanDetail() {
 				</Link>
 				<div className='img-detail-cont'>
 					<img src={van.imageUrl} alt='' />
-					<i></i>
+					<div className='vantype-container'>
+						<i className={`van-type ${van.type} selected`}>{van.type}</i>
+					</div>
+					<h1>{van.name}</h1>
+					<div className='van-detail-price'>
+						<p>${van.price}</p>
+						<span>/day</span>
+					</div>
+					<div className='van-description'>
+						<p>{van.description}</p>
+					</div>
+					<Link to='/vans'>
+						<button className='rentvanbutton'>
+							<p>Rent this van</p>
+						</button>
+					</Link>
 				</div>
 			</div>
 		</>
