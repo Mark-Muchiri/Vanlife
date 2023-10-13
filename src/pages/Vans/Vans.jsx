@@ -1,6 +1,4 @@
 import "./Vans.css";
-import Footer from "../../components/Footer/Footer";
-import Nav from "../../components/Nav/Nav";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -47,7 +45,6 @@ function Vans() {
 
 	return (
 		<>
-			<Nav />
 			<main className='vans-margin'>
 				<h1>Explore our van options</h1>
 				{/* Filters */}
@@ -62,7 +59,6 @@ function Vans() {
 					<div className='van-list'>{vanElements}</div>
 				</div>
 			</main>
-			<Footer />
 		</>
 	);
 }

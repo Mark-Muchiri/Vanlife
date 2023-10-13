@@ -1,7 +1,5 @@
 import "./VanDetail.css";
 import { Link, useParams } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
-import Nav from "../../components/Nav/Nav";
 import { useEffect, useState } from "react";
 
 function VanDetail() {
@@ -29,7 +27,6 @@ function VanDetail() {
 
 	return (
 		<>
-			<Nav />
 			<div className='van-detail-cont'>
 				<Link to='/vans'>
 					<div className='back'>
@@ -42,7 +39,6 @@ function VanDetail() {
 					<i></i>
 				</div>
 			</div>
-			<Footer />
 		</>
 	);
 }

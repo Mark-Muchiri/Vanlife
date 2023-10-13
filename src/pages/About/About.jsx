@@ -1,12 +1,9 @@
 import "./About.css";
-import Nav from "../../components/Nav/Nav";
-import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 
 function About() {
 	return (
 		<>
-			<Nav />
 			<main>
 				<img className='abtimg' src='/Abt-img.png' alt='' />
 				<div className='abt-title-cont'>
@@ -33,7 +30,6 @@ function About() {
 					</Link>
 				</div>
 			</main>
-			<Footer />
 		</>
 	);
 }

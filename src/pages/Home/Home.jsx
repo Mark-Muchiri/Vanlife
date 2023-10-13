@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
-import Nav from "../../components/Nav/Nav";
-import Footer from "../../components/Footer/Footer";
 
 function Home() {
 	return (
 		<>
-			<Nav />
 			{/* Main */}
 			<main>
 				{/* image */}
@@ -27,7 +24,6 @@ function Home() {
 					</Link>
 				</div>
 			</main>
-			<Footer />
 		</>
 	);
 }
