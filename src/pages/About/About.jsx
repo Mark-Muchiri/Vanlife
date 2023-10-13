@@ -26,7 +26,7 @@ function About() {
 				</div>
 				<div className='abt-card'>
 					<p>Your destination is waiting. Your van is ready.</p>
-					<Link className="explore-container">
+					<Link to='/vans' className='explore-container'>
 						<button className='explore'>
 							<p>Explore our vans</p>
 						</button>
