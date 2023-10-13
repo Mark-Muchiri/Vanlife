@@ -36,10 +36,12 @@ img.abtimg {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 90%;
+  width: 74%;
   height: 198px;
   border-radius: 5px;
   background: #f3b66c;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .abt-card>p {
@@ -48,33 +50,38 @@ img.abtimg {
   font-size: 24px;
   font-weight: 600;
   line-height: 30px;
-  margin-left: -50px;
-  width: 360px;
+  width: 320px;
 }
-
-.abt-card>button {
+.explore-container {
+  width: 100%;
+}
+.abt-card .explore {
   margin-top: 20px;
-  margin-left: -235px;
-  padding: 12px 22px 13px 22px;
+  width: 100%;
+  padding: 13px 22px 12px 22px;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
   background: #161616;
   transition: background-color 0.3s ease;
-  /* Add a transition for a smooth effect */
-}
-
-/* Add the click effect on :active */
-.abt-card>button:active {
-  background: #000;
-  /* Change the background color when the button is clicked */
-}
-
-
-.abt-card>button>p {
   color: #FFF;
   font-family: Inter;
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
 }
+
+/* Add the click effect on :active */
+.abt-card>.explore:active {
+  background: #000;
+  /* Change the background color when the .explore is clicked */
+}
+
+
+/* .abt-card>.explore>p {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+} */
