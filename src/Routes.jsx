@@ -14,20 +14,6 @@ import Income from "./pages/Host/Income.jsx";
 import Reviews from "./pages/Host/Reviews.jsx";
 import HostLayout from "./pages/Host/HostLayout.jsx";
 
-/**
- * Challenge: Make the HostLayout component!
- * The HostLayout should use Links to navigate to the following
- * routes:
- *    * Dashboard ("/host")
- *    * Income ("/host/income")
- *    * Reviews ("/host/reviews")
- * Then replace the parent "/host" route's element below with the
- * new HostLayout component you made.
- *
- * NOTE: The dashboard route/page will be gone for now, but don't fret.
- * We'll be fixing that in the next lesson.
- */
-
 // Create a router using createBrowserRouter
 const router = createBrowserRouter([
 	{
@@ -39,11 +25,13 @@ const router = createBrowserRouter([
 			{ path: "/vans", element: <Vans /> },
 			{ path: "/vans/:id", element: <VanDetail /> },
 			{
+				path: "/host",
 				element: <HostLayout />,
 				children: [
-					{ path: "/host", element: <Dashboard /> },
-					{ path: "/host/income", element: <Income /> },
-					{ path: "/host/reviews", element: <Reviews /> },
+					// Make the path empty for it to be an indexed route
+					{ path: "", element: <Dashboard /> },
+					{ path: "income", element: <Income /> },
+					{ path: "reviews", element: <Reviews /> },
 				],
 			},
 		],
