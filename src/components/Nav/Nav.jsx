@@ -1,7 +1,16 @@
 import "./Nav.css";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function Nav() {
+const activeStyle = {
+	all: "unset",
+	textDecoration: "underline",
+	fontFamily: "Inter",
+	fontWeight: "900",
+	color: "#df8b37",
+	cursor: "pointer",
+};
+
 	return (
 		<>
 			{/* Nav */}
@@ -13,24 +22,27 @@ function Nav() {
 				</Link>
 				<div className='pages'>
 					<ul>
-						<Link
-							className={location.pathname === "/host" ? "active" : ""}
+						<NavLink
+							style={({ isActive }) => (isActive ? activeStyle : null)}
+							className='link'
 							to='/host'
 						>
-							<li>Host</li>
-						</Link>
-						<Link
-							className={location.pathname === "/about" ? "active" : ""}
+							Host
+						</NavLink>
+						<NavLink
+							style={({ isActive }) => (isActive ? activeStyle : null)}
+							className='link'
 							to='/about'
 						>
-							<li>About</li>
-						</Link>
-						<Link
-							className={location.pathname === "/vans" ? "active" : ""}
+							About
+						</NavLink>
+						<NavLink
+							style={({ isActive }) => (isActive ? activeStyle : null)}
+							className='link'
 							to='/vans'
 						>
-							<li>Vans</li>
-						</Link>
+							Vans
+						</NavLink>
 					</ul>
 				</div>
 			</nav>

@@ -10,11 +10,11 @@ nav {
   background: #FFF7ED;
 }
 
-nav>a{
+nav>a {
   all: unset;
 }
 
-nav>a{
+nav>a {
   cursor: pointer;
 }
 
@@ -30,26 +30,25 @@ ul {
   gap: 1.3rem;
 }
 
-li {
-  color: #4D4D4D !important;
+.link {
   all: unset;
-  font-family: inter;
+  color: #4D4D4D;
+  cursor: pointer;
+  font-family: Inter;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 23px;
 }
 
-li:hover {
+.link:hover {
+  font-family: Inter;
+  font-weight: 500;
+  color: #d08234;
   text-decoration: underline;
-  cursor: pointer;
 }
 
 .logo:hover {
   text-decoration: underline overline;
-}
-
-.active {
-  /* text-decoration: underline; */
 }
 
 .active:hover {

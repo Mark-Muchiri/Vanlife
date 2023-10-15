@@ -14,6 +14,17 @@ import Income from "./pages/Host/Income.jsx";
 import Reviews from "./pages/Host/Reviews.jsx";
 import HostLayout from "./pages/Host/HostLayout.jsx";
 
+/**
+ * Thought experiment:
+ *
+ * Re-write the vans route as a nested route. Because there's no shared
+ * UI between /vans and /vans/:id, the parent "vans" route won't have its
+ * own `element` prop, just a `path` prop.
+ *
+ * Hint: you're not creating a Layout Route (since that's only for
+ * shared UI), but you are using another kind of "pathless" route...
+ */
+
 // Create a router using createBrowserRouter
 const router = createBrowserRouter([
 	{
@@ -21,14 +32,25 @@ const router = createBrowserRouter([
 		element: <Layout />,
 		children: [
 			{ path: "/", element: <Home /> },
-			{ path: "/about", element: <About /> },
-			{ path: "/vans", element: <Vans /> },
-			{ path: "/vans/:id", element: <VanDetail /> },
+			{ path: "about", element: <About /> },
+			/** NOTE: Nested routes
+			 * If there's no component shared
+			 		There's no need for nesting
+			 */
 			{
-				path: "/host",
+				path: "vans",
+				children: [
+					// indexed route
+					{ path: "", element: <Vans /> },
+					{ path: ":id", element: <VanDetail /> },
+				],
+			},
+			{
+				path: "host",
 				element: <HostLayout />,
 				children: [
-					// Make the path empty for it to be an indexed route
+					// Changed path to an empty string for Dashboard
+					// This makes it an indexed route
 					{ path: "", element: <Dashboard /> },
 					{ path: "income", element: <Income /> },
 					{ path: "reviews", element: <Reviews /> },
