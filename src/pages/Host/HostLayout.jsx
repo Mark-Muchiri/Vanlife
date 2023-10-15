@@ -15,10 +15,12 @@ function HostLayout() {
 		<>
 			<div className='pages'>
 				<ul>
+					{/* NOTE : use end for the indxed route NavLink */}
 					<NavLink
 						style={({ isActive }) => (isActive ? activeStyle : null)}
 						className='link'
-						to='/host/'
+						to='/host'
+						end
 					>
 						Dashboard
 					</NavLink>
