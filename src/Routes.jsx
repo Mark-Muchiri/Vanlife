@@ -14,17 +14,6 @@ import Income from "./pages/Host/Income.jsx";
 import Reviews from "./pages/Host/Reviews.jsx";
 import HostLayout from "./pages/Host/HostLayout.jsx";
 
-/**
- * Thought experiment:
- *
- * Re-write the vans route as a nested route. Because there's no shared
- * UI between /vans and /vans/:id, the parent "vans" route won't have its
- * own `element` prop, just a `path` prop.
- *
- * Hint: you're not creating a Layout Route (since that's only for
- * shared UI), but you are using another kind of "pathless" route...
- */
-
 // Create a router using createBrowserRouter
 const router = createBrowserRouter([
 	{
