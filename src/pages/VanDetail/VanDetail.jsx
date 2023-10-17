@@ -28,6 +28,7 @@ function VanDetail() {
 							effect='blur'
 							src='/leftArrow.svg'
 							alt={`back arrow icon`}
+							width={`30px`}
 						/>
 						<p>Back to all vans</p>
 					</div>
@@ -37,6 +38,8 @@ function VanDetail() {
 						effect='blur'
 						src={van.imageUrl}
 						alt={`${van.name} image`}
+						height={`367px`}
+						width={`100%`}
 					/>
 					<div className='vantype-container'>
 						<i className={`van-type ${van.type} selected`}>{van.type}</i>

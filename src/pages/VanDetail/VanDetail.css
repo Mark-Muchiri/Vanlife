@@ -12,10 +12,6 @@
   cursor: pointer;
 }
 
-.back img {
-  width: 30px;
-}
-
 .back p {
   color: #201F1D;
   font-family: Inter;
@@ -28,7 +24,6 @@
 }
 
 .img-detail-cont img {
-  width: 100%;
   object-fit: cover;
   object-position: 50% 85%;
   border-radius: 7px;

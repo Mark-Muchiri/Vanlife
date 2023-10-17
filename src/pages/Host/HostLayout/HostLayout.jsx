@@ -13,7 +13,7 @@ function HostLayout() {
 
 	return (
 		<>
-			<div className='pages'>
+			<div className='host-layout'>
 				<ul>
 					{/* NOTE : use end for the indxed route NavLink */}
 					<NavLink

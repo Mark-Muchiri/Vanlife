@@ -34,6 +34,7 @@ function Vans() {
 					effect='blur'
 					src={van.imageUrl}
 					alt={van.name}
+					width={`100%`}
 				/>
 				<div className='van-info'>
 					<h3>{van.name}</h3>

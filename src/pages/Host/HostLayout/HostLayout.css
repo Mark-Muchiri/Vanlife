@@ -9,3 +9,7 @@ h2 a p {
   color: rgb(198, 134, 51);
   cursor: pointer;
 }
+
+.host-layout {
+  margin-left: 27px;
+}

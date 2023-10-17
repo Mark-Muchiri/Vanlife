@@ -8,9 +8,6 @@
 }
 
 .homecontainer .homeimg {
-  position: relative;
-  height: 350px;
-  width: 100%;
   object-fit: cover;
   filter: contrast(115%) saturate(106%) brightness(50%);
   object-position: 50% 23%;

@@ -1,7 +1,7 @@
+import "./Home.css";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import "./Home.css";
 
 function Home() {
 	return (
@@ -15,6 +15,8 @@ function Home() {
 						effect='blur'
 						src='/vanlifehome.png'
 						alt={`A mountain over a lake`}
+						width={`100%`}
+						height={`350px`}
 					/>
 					{/* <img className='homeimg' src='/vanlifehome.png' /> */}
 					{/* Hero text */}

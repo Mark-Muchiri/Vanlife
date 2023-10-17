@@ -3,6 +3,22 @@
   margin-right: 27px;
 }
 
+.back-host-vandetail {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.back-host-vandetail p {
+  color: #201F1D;
+  font-family: Inter;
+  font-weight: 500;
+  text-decoration-line: underline;
+}
+
 .host-detail-container {
   margin-left: 27px;
   margin-right: 27px;
@@ -72,5 +88,4 @@
 
 .host-van-pages {
   padding-top: 25px;
-  margin-left: -40px !important;
 }

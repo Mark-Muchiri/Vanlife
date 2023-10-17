@@ -2,6 +2,8 @@
 import "./HostVansLayout.css";
 import { useEffect, useState } from "react";
 import { Link, NavLink, Outlet, useParams } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 // Defining the functional component HostVansID
 function HostVansID() {
@@ -42,8 +44,13 @@ function HostVansID() {
 			{/* Back to all vans */}
 			<div className='all-vans-container'>
 				<Link to='/vans'>
-					<div className='back'>
-						<img src='/leftArrow.svg' alt='back arrow icon' />
+					<div className='back-host-vandetail'>
+						<LazyLoadImage
+							effect='blur'
+							src='/leftArrow.svg'
+							alt={`back arrow icon`}
+							width={`30px`}
+						/>
 						<p>Back to all vans</p>
 					</div>
 				</Link>

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import "./HostVans.css";
 import { useEffect, useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function HostVans() {
 	const [hostVans, setHostVans] = useState([]);
@@ -18,7 +20,14 @@ function HostVans() {
 		<div key={van.hostId} className='hostvancont'>
 			<Link to={`/host/vans/${van.id}`}>
 				<div className='hostvancard'>
-					<img src={van.imageUrl} alt='van image' />
+					<LazyLoadImage
+						effect='blur'
+						src={van.imageUrl}
+						alt={`van image`}
+						width={`65.877px`}
+						height={`65.877px`}
+					/>
+					{/* <img src={van.imageUrl} alt='van image' /> */}
 					<div className='details'>
 						<h3>{van.name}</h3>
 						<p>

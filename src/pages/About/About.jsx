@@ -11,6 +11,8 @@ function About() {
 					effect='blur'
 					src='/Abt-img.png'
 					alt={`A with a roof tent`}
+					width={`100%`}
+					height={`100%`}
 				/>
 			</div>
 			{/* <img className='abtimg' src='/Abt-img.png' alt='' /> */}

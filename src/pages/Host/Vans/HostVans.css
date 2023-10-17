@@ -3,6 +3,10 @@
   padding-right: 27px;
 }
 
+.hostvancont a {
+  text-decoration: none;
+}
+
 .hostvancard {
   width: 80%%;
   height: 102px;
@@ -17,8 +21,6 @@
 }
 
 .hostvancard img{
-  width: 65.877px;
-  height: 65.877px;
   border-radius: 5px;
   object-fit: cover;
 }

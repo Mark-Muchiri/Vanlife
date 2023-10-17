@@ -1,8 +1,11 @@
-.about-img-container img {
-  width: 100vw;
+.about-img-container {
+  width: 100%;
   height: 234px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.45) 100%), url(<path-to-image ), darkgray 0px -65.191px / 100% 178.109% no-repeat;
+}
+
+.about-img-container img {
   object-fit: cover;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.45) 100%), url(<path-to-image>) darkgray 0px -65.191px / 100% 178.109% no-repeat;
 }
 
 .abt-title-cont {
@@ -52,9 +55,11 @@
   line-height: 30px;
   width: 320px;
 }
+
 .explore-container {
   width: 100%;
 }
+
 .abt-card .explore {
   margin-top: 20px;
   width: 100%;
