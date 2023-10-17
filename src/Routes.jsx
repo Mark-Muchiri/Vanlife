@@ -13,6 +13,22 @@ import Dashboard from "./pages/Host/Dashboard.jsx";
 import Income from "./pages/Host/Income.jsx";
 import Reviews from "./pages/Host/Reviews.jsx";
 import HostLayout from "./pages/Host/HostLayout.jsx";
+import HostVans from "./pages/Host/HostVans.jsx";
+import HostVansDetail from "./pages/Host/HostVansDetail.jsx";
+
+/**
+ * Challenge: add the /host/vans and /host/vans/:id routes, as well
+ * as the "Vans" link in the Host navbar.
+ *
+ * For now, just create the stubbed-out version of the pages (i.e.
+ * components that just render an <h1>). Don't worry about adding
+ * navigation from /host/vans to /host/vans/:id yet - the link to
+ * /host/vans is enough for now.
+ *
+ * When deciding whether or not to use nested routes, keep in mind
+ * what will/won't be shared between these two pages. See the Figma
+ * design file (or the screenshots) to help guide your choice.
+ */
 
 // Create a router using createBrowserRouter
 const router = createBrowserRouter([
@@ -23,8 +39,9 @@ const router = createBrowserRouter([
 			{ path: "/", element: <Home /> },
 			{ path: "about", element: <About /> },
 			/** NOTE: Nested routes
-			 * If there's no component shared
-			 		There's no need for nesting
+			 * If there's no component shared,
+			   there's no need for nesting.
+			 * I've nested vans for practice sake
 			 */
 			{
 				path: "vans",
@@ -42,6 +59,8 @@ const router = createBrowserRouter([
 					// This makes it an indexed route
 					{ path: "", element: <Dashboard /> },
 					{ path: "income", element: <Income /> },
+					{ path: "vans", element: <HostVans /> },
+					{ path: "vans/:id", element: <HostVansDetail /> },
 					{ path: "reviews", element: <Reviews /> },
 				],
 			},
