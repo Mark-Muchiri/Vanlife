@@ -1,0 +1,76 @@
+.all-vans-container {
+  margin-left: 27px;
+  margin-right: 27px;
+}
+
+.host-detail-container {
+  margin-left: 27px;
+  margin-right: 27px;
+  border-radius: 6px;
+  background: #FFF;
+  padding: 25px;
+  margin-top: -10px;
+}
+
+.image-text {
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+}
+
+.image-text img {
+  width: 160.15px;
+  height: 157.903px;
+  object-fit: cover;
+  border-radius: 5px;
+  background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.text .vantype-container {
+  position: relative;
+  top: -10px;
+}
+
+.text h2 {
+  all: unset;
+  color: #161616;
+  font-family: Inter;
+  font-size: 26.058px;
+  font-weight: 700;
+  line-height: 27.404px;
+}
+
+.name-rates {
+  margin-top: 10px;
+}
+
+.rates {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.text p .cost {
+  color: #161616;
+  font-family: Inter;
+  font-size: 19.544px;
+  font-weight: 700;
+  line-height: 35.954px;
+}
+
+.text p span {
+  color: #161616;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 35.954px;
+}
+
+.host-van-pages {
+  padding-top: 25px;
+  margin-left: -40px !important;
+}

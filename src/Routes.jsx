@@ -12,9 +12,9 @@ import Vans from "./pages/Vans/Vans.jsx";
 import Dashboard from "./pages/Host/Dashboard.jsx";
 import Income from "./pages/Host/Income.jsx";
 import Reviews from "./pages/Host/Reviews.jsx";
-import HostLayout from "./pages/Host/HostLayout.jsx";
+import HostLayout from "./pages/Host/HostLayout/HostLayout.jsx";
 import HostVans from "./pages/Host/Vans/HostVans.jsx";
-import HostVansDetail from "./pages/Host/Vans/HostVansDetail.jsx";
+import HostVansDetail from "./pages/Host/Vans/Details/HostVansLayout.jsx";
 
 /**
  * Challenge: add the /host/vans and /host/vans/:id routes, as well
