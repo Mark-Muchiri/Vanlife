@@ -17,7 +17,7 @@ function VanDetail() {
 		getVan();
 	}, [params.id]);
 
-	console.log(van);
+	console.log(van.name);
 	return (
 		<>
 			<div className='van-detail-cont'>

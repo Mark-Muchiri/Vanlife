@@ -1,0 +1,41 @@
+.hostvancont{
+  padding-left: 27px;
+  padding-right: 27px;
+}
+
+.hostvancard {
+  width: 80%%;
+  height: 102px;
+  border-radius: 6px;
+  background: #FFF;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 10px;
+  padding-left: 24px;
+}
+
+.hostvancard img{
+  width: 65.877px;
+  height: 65.877px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.details h3{
+  all: unset;
+  color: #161616;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 31.662px;
+}
+
+.details p{
+  margin-top: -5px;
+  color: #4D4D4D;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 31.662px;
+}
