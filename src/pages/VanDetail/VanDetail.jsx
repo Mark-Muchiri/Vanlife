@@ -1,6 +1,8 @@
 import "./VanDetail.css";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function VanDetail() {
 	const params = useParams();
@@ -17,18 +19,25 @@ function VanDetail() {
 		getVan();
 	}, [params.id]);
 
-	console.log(van.name);
 	return (
 		<>
 			<div className='van-detail-cont'>
 				<Link to='/vans'>
 					<div className='back'>
-						<img src='/leftArrow.svg' alt='back arrow icon' />
+						<LazyLoadImage
+							effect='blur'
+							src='/leftArrow.svg'
+							alt={`back arrow icon`}
+						/>
 						<p>Back to all vans</p>
 					</div>
 				</Link>
 				<div className='img-detail-cont'>
-					<img src={van.imageUrl} alt='' />
+					<LazyLoadImage
+						effect='blur'
+						src={van.imageUrl}
+						alt={`${van.name} image`}
+					/>
 					<div className='vantype-container'>
 						<i className={`van-type ${van.type} selected`}>{van.type}</i>
 					</div>

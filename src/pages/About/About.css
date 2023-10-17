@@ -1,8 +1,8 @@
-img.abtimg {
-  width: 100%;
+.about-img-container img {
+  width: 100vw;
   height: 234px;
   object-fit: cover;
-  object-position: 50% 50%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.45) 100%), url(<path-to-image>) darkgray 0px -65.191px / 100% 178.109% no-repeat;
 }
 
 .abt-title-cont {

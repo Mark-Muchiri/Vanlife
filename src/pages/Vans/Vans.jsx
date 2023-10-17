@@ -1,6 +1,8 @@
 import "./Vans.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 function Vans() {
 	// State to hold the fetched data
@@ -28,7 +30,11 @@ function Vans() {
 	const vanElements = data.map((van) => (
 		<div key={van.id} className='van-tile'>
 			<Link to={`/vans/${van.id}`}>
-				<img src={van.imageUrl} />
+				<LazyLoadImage
+					effect='blur'
+					src={van.imageUrl}
+					alt={van.name}
+				/>
 				<div className='van-info'>
 					<h3>{van.name}</h3>
 					<div className='van-price'>

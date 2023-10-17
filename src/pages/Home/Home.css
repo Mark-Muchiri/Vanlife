@@ -1,6 +1,5 @@
 /* ############ Main ############ */
 .homecontainer {
-  width: full;
   height: 350px;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.45) 100%), url(<path-to-image ), darkgray 0px -65.191px / 100% 178.109% no-repeat;
   position: relative;
@@ -9,7 +8,8 @@
 }
 
 .homecontainer .homeimg {
-  height: 100%;
+  position: relative;
+  height: 350px;
   width: 100%;
   object-fit: cover;
   filter: contrast(115%) saturate(106%) brightness(50%);
