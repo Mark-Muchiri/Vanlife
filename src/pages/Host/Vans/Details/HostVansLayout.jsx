@@ -43,7 +43,7 @@ function HostVansID() {
 		<>
 			{/* Back to all vans */}
 			<div className='all-vans-container'>
-				<Link to='/vans'>
+				<Link to='..' relative="path">
 					<div className='back-host-vandetail'>
 						<LazyLoadImage
 							effect='blur'
@@ -87,7 +87,6 @@ function HostVansID() {
 							style={({ isActive }) => (isActive ? activeStyle : null)}
 							className='link'
 							to={`/`}
-							// to={`/host/vans/${hostVanDetail.id}`}
 						>
 							Details
 						</NavLink>
@@ -110,12 +109,6 @@ function HostVansID() {
 			</div>
 			{/* Children components */}
 			<Outlet />
-
-			<h2>
-				<Link to={`/host/vans`}>
-					<p>Back to Host Van</p>
-				</Link>
-			</h2>
 		</>
 	);
 }
