@@ -1,7 +1,16 @@
 .loading-container {
   display: flex;
+  flex-direction: column;
+  gap: 20px;
   justify-content: center;
   align-items: center;
   height: 50vh;
   background-color: #FFF7ED;
+}
+
+.loading-container h2 {
+  font-family: inter;
+  font-weight: 600;
+  font-style: 27px;
+  color: #4D4D4D;
 }
