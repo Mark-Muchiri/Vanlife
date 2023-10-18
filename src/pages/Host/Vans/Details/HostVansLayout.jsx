@@ -1,7 +1,12 @@
 // Importing necessary components and styles
 import "./HostVansLayout.css";
 import { useEffect, useState } from "react";
-import { Link, NavLink, Outlet, useParams } from "react-router-dom";
+import {
+	Link,
+	NavLink,
+	Outlet,
+	useParams,
+} from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
@@ -43,7 +48,7 @@ function HostVansID() {
 		<>
 			{/* Back to all vans */}
 			<div className='all-vans-container'>
-				<Link to='..' relative="path">
+				<Link to='..' relative='path'>
 					<div className='back-host-vandetail'>
 						<LazyLoadImage
 							effect='blur'
@@ -67,7 +72,9 @@ function HostVansID() {
 					/>
 					<div className='text'>
 						<div className='vantype-container'>
-							<i className={`van-type ${hostVanDetail.type} selected`}>
+							<i
+								className={`van-type ${hostVanDetail.type} selected`}
+							>
 								{hostVanDetail.type}
 							</i>
 						</div>
@@ -84,31 +91,39 @@ function HostVansID() {
 				<div className='host-van-pages'>
 					<ul>
 						<NavLink
-							style={({ isActive }) => (isActive ? activeStyle : null)}
+							style={({ isActive }) =>
+								isActive ? activeStyle : null
+							}
 							className='link'
-							to={`/`}
+							to={`.`}
+							end
 						>
 							Details
 						</NavLink>
 						<NavLink
-							style={({ isActive }) => (isActive ? activeStyle : null)}
+							style={({ isActive }) =>
+								isActive ? activeStyle : null
+							}
 							className='link'
-							to={`/`}
+							to={`pricing`}
 						>
 							Pricing
 						</NavLink>
 						<NavLink
-							style={({ isActive }) => (isActive ? activeStyle : null)}
+							style={({ isActive }) =>
+								isActive ? activeStyle : null
+							}
 							className='link'
-							to={`/`}
+							to={`photos`}
 						>
 							Photos
 						</NavLink>
 					</ul>
 				</div>
+				<br />
+				{/* Children components */}
+				<Outlet />
 			</div>
-			{/* Children components */}
-			<Outlet />
 		</>
 	);
 }

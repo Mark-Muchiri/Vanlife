@@ -1,0 +1,17 @@
+.pricing {
+  color: #161616;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21.46px;
+}
+
+.pricing span {
+  color: #4D4D4D;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21.46px;
+}

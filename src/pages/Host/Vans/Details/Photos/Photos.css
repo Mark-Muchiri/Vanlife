@@ -1,0 +1,5 @@
+.img-container-host img {
+  object-fit: cover;
+  border-radius: 5px;
+  background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+}

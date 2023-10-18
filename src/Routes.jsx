@@ -6,9 +6,10 @@ import {
 import { lazy, Suspense } from "react";
 // Import server file
 import "./server.js";
-import Loading from "./components/Loading.jsx";
 
 // Import necessary page components
+const Loading = lazy(() => import("./components/Loading.jsx"));
+// import Loading from "./components/Loading.jsx";
 const Layout = lazy(() => import("./components/Layout.jsx"));
 const About = lazy(() => import("./pages/About/About.jsx"));
 const Home = lazy(() => import("./pages/Home/Home.jsx"));
@@ -27,6 +28,15 @@ const HostVans = lazy(() =>
 );
 const HostVansDetail = lazy(() =>
 	import("./pages/Host/Vans/Details/HostVansLayout.jsx")
+);
+const HostDetails = lazy(() =>
+	import("./pages/Host/Vans/Details/HostDetails/HostDetails.jsx")
+);
+const Pricing = lazy(() =>
+	import("./pages/Host/Vans/Details/Pricing/Pricing.jsx")
+);
+const Photos = lazy(() =>
+	import("./pages/Host/Vans/Details/Photos/Photos.jsx")
 );
 
 /**
@@ -78,8 +88,16 @@ const router = createBrowserRouter([
 					{ path: "", element: <Dashboard /> },
 					{ path: "income", element: <Income /> },
 					{ path: "vans", element: <HostVans /> },
-					{ path: "vans/:id", element: <HostVansDetail /> },
 					{ path: "reviews", element: <Reviews /> },
+					{
+						path: "vans/:id",
+						element: <HostVansDetail />,
+						children: [
+							{ path: "", element: <HostDetails /> },
+							{ path: "pricing", element: <Pricing /> },
+							{ path: "photos", element: <Photos /> },
+						],
+					},
 				],
 			},
 		],

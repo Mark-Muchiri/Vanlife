@@ -12,7 +12,7 @@ function Loading() {
 						height='80px'
 					/>
 				</div>
-			<h2>...Loading...</h2>
+			<h2>... Loading ...</h2>
 			</div>
 		</>
 	);
