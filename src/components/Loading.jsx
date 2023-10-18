@@ -8,8 +8,8 @@ function Loading() {
 				<div className=''>
 					<FadingDots
 						color='#FF6B00'
-						width='100px'
-						height='100px'
+						width='80px'
+						height='80px'
 					/>
 				</div>
 			<h2>...Loading...</h2>
