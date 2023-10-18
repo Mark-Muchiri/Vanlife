@@ -25,7 +25,8 @@
   border-radius: 6px;
   background: #FFF;
   padding: 25px;
-  margin-top: -10px;
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 
 .image-text {
@@ -45,24 +46,25 @@
 .text {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding-top: 18px;
 }
 
 .text .vantype-container {
   position: relative;
-  top: -10px;
 }
 
 .text h2 {
   all: unset;
   color: #161616;
   font-family: Inter;
-  font-size: 26.058px;
+  font-size: 25.058px;
   font-weight: 700;
   line-height: 27.404px;
 }
 
 .name-rates {
-  margin-top: 10px;
+  margin-top: 25px;
 }
 
 .rates {
@@ -74,7 +76,7 @@
 .text p .cost {
   color: #161616;
   font-family: Inter;
-  font-size: 19.544px;
+  font-size: 18.544px;
   font-weight: 700;
   line-height: 35.954px;
 }
@@ -88,4 +90,59 @@
 
 .host-van-pages {
   padding-top: 25px;
+}
+
+.van-type {
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.van-type:hover {
+  color: #FFEAD0;
+}
+
+.van-type:focus {
+  outline: none;
+}
+
+.van-type.selected {
+  color: #FFEAD0;
+}
+
+.van-type.simple:hover,
+.van-type.simple.selected {
+  background-color: #E17654;
+}
+
+.van-type.rugged:hover,
+.van-type.rugged.selected {
+  background-color: #115E59;
+}
+
+.van-type.luxury:hover,
+.van-type.luxury.selected {
+  background-color: #161616;
+}
+
+.van-type.clear-filters {
+  margin-left: -20px;
+  height: 34px;
+  padding: 6px 26px;
+  font-style: normal;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  text-decoration: underline;
+  background-color: transparent;
+  color: #4D4D4D;
+}
+
+i[class*='van-type-'] {
+  padding: 7px 14px;
 }

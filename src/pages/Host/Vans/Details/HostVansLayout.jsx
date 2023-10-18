@@ -58,7 +58,13 @@ function HostVansID() {
 			{/* van image && text */}
 			<div className='host-detail-container'>
 				<div className='image-text'>
-					<img src={hostVanDetail.imageUrl} alt='van image' />
+					<LazyLoadImage
+						effect='blur'
+						src={hostVanDetail.imageUrl}
+						alt={`van image`}
+						width={`160.15px`}
+						height={`157.903px`}
+					/>
 					<div className='text'>
 						<div className='vantype-container'>
 							<i className={`van-type ${hostVanDetail.type} selected`}>
