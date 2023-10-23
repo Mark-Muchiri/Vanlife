@@ -30,6 +30,7 @@ function Vans() {
 	const vanElements = data.map((van) => (
 		<div key={van.id} className='van-tile'>
 			<Link to={`/vans/${van.id}`}>
+				{/* Define the width and height inline */}
 				<LazyLoadImage
 					effect='blur'
 					src={van.imageUrl}
