@@ -21,7 +21,7 @@ function Vans() {
 	}, []);
 
 	// This function is very useful when adding multiple filter params
-  function handleFilterChange(key, value) {
+	function handleFilterChange(key, value) {
 		setSearchParams((prevParams) => {
 			if (value === null) {
 				prevParams.delete(key);
@@ -81,12 +81,14 @@ function Vans() {
 				{/* Filters */}
 				<div className='filters'>
 					{filterCards}
-					<div
-						onClick={() => handleFilterChange("type", null)}
-						className='clear-cont'
-					>
-						<p>Clear Filters</p>
-					</div>
+					{typeFilter ? (
+						<div
+							onClick={() => handleFilterChange("type", null)}
+							className='clear-cont'
+						>
+							<p>Clear Filters</p>
+						</div>
+					) : null}
 				</div>
 				{/* Vans data */}
 				<div className='van-list-container'>
