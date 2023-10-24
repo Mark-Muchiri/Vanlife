@@ -37,7 +37,9 @@ function Vans() {
 	const filterCards = filter.map((filterItem, index) => (
 		<div
 			onClick={() => handleFilterChange("type", `${filterItem.toLowerCase()}`)}
-			className='filter-button'
+			className={`filter-button ${
+				typeFilter === `${filterItem.toLowerCase()}` ? "active" : ""
+			}`}
 			key={index}
 		>
 			<p>{filterItem}</p>
@@ -52,7 +54,7 @@ function Vans() {
 	// Map the data through cards
 	const vanElements = displayedCharacters.map((van) => (
 		<div key={van.id} className='van-tile'>
-			<Link to={`/vans/${van.id}`}>
+			<Link to={van.id}>
 				{/* Define the width and height inline */}
 				<LazyLoadImage
 					effect='blur'

@@ -40,6 +40,14 @@ main>h1 {
   transform: scale(0.98);
 }
 
+.filters>.filter-button.active {
+  background: #000000;
+}
+
+.filters>.filter-button.active>p {
+  color: #FFD699;
+}
+
 .filters>.filter-button>p {
   /* filter text styles */
   color: #4D4D4D;

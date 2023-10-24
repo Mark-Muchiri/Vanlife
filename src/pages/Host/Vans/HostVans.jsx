@@ -18,7 +18,7 @@ function HostVans() {
 	// Map through the vans data
 	const ListedVans = hostVans.map((van) => (
 		<div key={van.hostId} className='hostvancont'>
-			<Link to={`/host/vans/${van.id}`}>
+			<Link to={van.id}>
 				<div className='hostvancard'>
 					<LazyLoadImage
 						effect='blur'
