@@ -1,12 +1,16 @@
 import "./Vans.css";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 function Vans() {
 	// State to hold the fetched data
-	const [data, setData] = useState([]);
+	const [ data, setData ] = useState([]);
+	const [ searchParams ] = useSearchParams()
+
+	const typeFilter = searchParams.get('type')	
+
 
 	// useEffect to fetch data when the component mounts
 	useEffect(() => {
