@@ -6,11 +6,9 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 function Vans() {
 	// State to hold the fetched data
-	const [ data, setData ] = useState([]);
-	const [ searchParams ] = useSearchParams()
-
-	const typeFilter = searchParams.get('type')	
-
+	const [data, setData] = useState([]);
+	const [searchParams, setSearchParams] = useSearchParams();
+	const typeFilter = searchParams.get("type");
 
 	// useEffect to fetch data when the component mounts
 	useEffect(() => {
@@ -25,13 +23,22 @@ function Vans() {
 	// Map through filter buttons
 	const filter = ["Simple", "Luxury", "Rugged"];
 	const filterCards = filter.map((filterItem, index) => (
-		<div className='filter-button' key={index}>
+		<div
+			onClick={() => setSearchParams({ type: filterItem.toLowerCase() })}
+			className='filter-button'
+			key={index}
+		>
 			<p>{filterItem}</p>
 		</div>
 	));
 
+	// Filter function
+	const displayedCharacters = typeFilter
+		? data.filter((char) => char.type.toLowerCase() === typeFilter)
+		: data;
+
 	// Map the data through cards
-	const vanElements = data.map((van) => (
+	const vanElements = displayedCharacters.map((van) => (
 		<div key={van.id} className='van-tile'>
 			<Link to={`/vans/${van.id}`}>
 				{/* Define the width and height inline */}
@@ -62,7 +69,7 @@ function Vans() {
 				{/* Filters */}
 				<div className='filters'>
 					{filterCards}
-					<div className='clear-cont'>
+					<div onClick={() => setSearchParams({})} className='clear-cont'>
 						<p>Clear Filters</p>
 					</div>
 				</div>

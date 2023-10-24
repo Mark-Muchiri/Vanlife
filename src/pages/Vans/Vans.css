@@ -26,9 +26,22 @@ main>h1 {
   align-items: center;
   border-radius: 5px;
   background: #FFEAD0;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.filters>.filter-button:hover {
+  cursor: pointer;
+  background: #FFD699;
+}
+
+.filters>.filter-button:active {
+  background: #E5C18F;
+  transform: scale(0.98);
 }
 
 .filters>.filter-button>p {
+  /* filter text styles */
   color: #4D4D4D;
   font-family: Inter;
   font-weight: 500;
@@ -39,6 +52,17 @@ main>h1 {
   padding-left: 30px;
   margin-right: 10px;
   width: 150px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.filters>.clear-cont:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.filters>.clear-cont:active {
+  transform: scale(0.98);
 }
 
 .filters>.clear-cont>p {
@@ -48,6 +72,10 @@ main>h1 {
   font-weight: 500;
   line-height: 23.919px;
   text-decoration-line: underline;
+}
+
+.filters>.clear-cont:hover>p {
+  color: #DF8B37;
 }
 
 .van-list-container {
