@@ -20,11 +20,23 @@ function Vans() {
 		getVans();
 	}, []);
 
+	// This function is very useful when adding multiple filter params
+  function handleFilterChange(key, value) {
+		setSearchParams((prevParams) => {
+			if (value === null) {
+				prevParams.delete(key);
+			} else {
+				prevParams.set(key, value);
+			}
+			return prevParams;
+		});
+	}
+
 	// Map through filter buttons
 	const filter = ["Simple", "Luxury", "Rugged"];
 	const filterCards = filter.map((filterItem, index) => (
 		<div
-			onClick={() => setSearchParams({ type: filterItem.toLowerCase() })}
+			onClick={() => handleFilterChange("type", `${filterItem.toLowerCase()}`)}
 			className='filter-button'
 			key={index}
 		>
@@ -69,7 +81,10 @@ function Vans() {
 				{/* Filters */}
 				<div className='filters'>
 					{filterCards}
-					<div onClick={() => setSearchParams({})} className='clear-cont'>
+					<div
+						onClick={() => handleFilterChange("type", null)}
+						className='clear-cont'
+					>
 						<p>Clear Filters</p>
 					</div>
 				</div>
