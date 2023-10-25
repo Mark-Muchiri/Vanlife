@@ -1,6 +1,6 @@
 // Import the necessary CSS file and required hooks from React
 import "./VanDetail.css";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -8,16 +8,8 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 function VanDetail() {
 	// Extract the parameters from the URL
 	const params = useParams();
-
-	/**
-	 * Challenge: modify the Link `to` prop below to send the user
-	 * back to the previous page with the searchParams included, if
-	 * they exist. (Remember we may not have anything in that state
-	 * if there were no filters applied before coming to this
-	 * van detail page, so make sure to "code defensively" to handle
-	 * that case.)
-	 */
-
+	// Access the current location using the useLocation hook
+	const location = useLocation();
 	// State to hold the fetched data
 	const [van, setVan] = useState([]);
 
@@ -31,13 +23,19 @@ function VanDetail() {
 		}
 		// Call the getVan function to retrieve the van details
 		getVan();
-	}, [params.id]); // Watch for changes in the 'params.id' dependency
+		// Watch for changes in the 'params.id' dependency
+	}, [params.id]);
+
+	// Extract the search parameters from the location state
+	const search = location.state?.search || "";
+	const type = location.state?.type || "all"
 
 	return (
 		<>
 			<div className='van-detail-cont'>
-				{/* Link to navigate back to the list of all vans */}
-				<Link to='/vans'>
+				{/* Link to navigate back to the list of all vans.
+				Without loosing the filter parameters selected */}
+				<Link to={`..${search}`} relative='path'>
 					<div className='back'>
 						{/* Lazy loaded back arrow icon */}
 						<LazyLoadImage
@@ -46,7 +44,7 @@ function VanDetail() {
 							alt={`back arrow icon`}
 							width={`30px`}
 						/>
-						<p>Back to all vans</p>
+						<p>Back to {type} vans</p>
 					</div>
 				</Link>
 				{/* Container for the van details */}

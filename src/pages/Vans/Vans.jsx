@@ -38,15 +38,14 @@ function Vans() {
 		});
 	}
 
-	// An array of filter options
+	// An array of filter options with corresponding colors
 	const filter = ["Simple", "Luxury", "Rugged"];
-
 	/* Using the 'map' function to iterate through each 
-	filter item and create corresponding filter buttons */
+filter item and create corresponding filter buttons */
 	const filterCards = filter.map((filterItem, index) => (
 		<div
 			/* Adding an onClick event to each filter button,
-			triggering the handleFilterChange function */
+    triggering the handleFilterChange function */
 			onClick={() => handleFilterChange("type", `${filterItem.toLowerCase()}`)}
 			// Applying dynamic CSS class based on the selected filter item
 			className={`filter-button ${
@@ -66,7 +65,14 @@ function Vans() {
 	// Map the data through cards and utilize lazy loading for the images
 	const vanElements = displayedCharacters.map((van) => (
 		<div key={van.id} className='van-tile'>
-			<Link to={van.id}>
+			{/* Holds the url state for vanDetail back button */}
+			<Link
+				to={van.id}
+				state={{
+					search: `?${searchParams.toString()}`,
+					type: typeFilter,
+				}}
+			>
 				{/* Utilize LazyLoadImage component with necessary attributes */}
 				<LazyLoadImage
 					effect='blur'

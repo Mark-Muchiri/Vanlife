@@ -16,6 +16,7 @@ main>h1 {
   align-items: center;
 }
 
+/* CSS for filter buttons */
 .filters>.filter-button {
   margin-right: 12px;
   display: flex;
@@ -30,20 +31,27 @@ main>h1 {
   text-decoration: none;
 }
 
+/* Change the background color on hover */
 .filters>.filter-button:hover {
   cursor: pointer;
   background: #FFD699;
+  /* New background color on hover */
 }
 
+/* Change the background color when clicked */
 .filters>.filter-button:active {
   background: #E5C18F;
+  /* New background color when clicked */
   transform: scale(0.98);
 }
 
+/* Change the background color for the active filter */
 .filters>.filter-button.active {
   background: #000000;
+  /* New background color for the active filter */
 }
 
+/* Change the text color for the active filter */
 .filters>.filter-button.active>p {
   color: #FFD699;
 }
