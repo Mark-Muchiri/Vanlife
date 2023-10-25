@@ -7,6 +7,15 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 function VanDetail() {
 	const params = useParams();
 
+	/**
+	 * Challenge: modify the Link `to` prop below to send the user
+	 * back to the previous page with the searchParams included, if
+	 * they exist. (Remember we may not have anything in that state
+	 * if there were no filters applied before coming to this
+	 * van detail page, so make sure to "code defensively" to handle
+	 * that case.)
+	 */
+
 	// State to hold the fetched data
 	const [van, setVan] = useState([]);
 	// useEffect to fetch data when the component mounts
