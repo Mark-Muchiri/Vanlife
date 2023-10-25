@@ -35,9 +35,9 @@ function About() {
 				<div className='abt-card'>
 					<p>Your destination is waiting. Your van is ready.</p>
 					<Link to='/vans' className='explore-container'>
-						<button className='explore'>
+						<div className='explore'>
 							<p>Explore our vans</p>
-						</button>
+						</div>
 					</Link>
 				</div>
 			</div>

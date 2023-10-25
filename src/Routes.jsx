@@ -1,8 +1,5 @@
 // Import necessary components and modules
-import {
-	RouterProvider,
-	createBrowserRouter,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { lazy, Suspense } from "react";
 // Import server file
 import "./server.js";
@@ -13,19 +10,13 @@ const Loading = lazy(() => import("./components/Loading.jsx"));
 const Layout = lazy(() => import("./components/Layout.jsx"));
 const About = lazy(() => import("./pages/About/About.jsx"));
 const Home = lazy(() => import("./pages/Home/Home.jsx"));
-const VanDetail = lazy(() =>
-	import("./pages/VanDetail/VanDetail.jsx")
-);
+const VanDetail = lazy(() => import("./pages/VanDetail/VanDetail.jsx"));
 const Vans = lazy(() => import("./pages/Vans/Vans.jsx"));
 const Dashboard = lazy(() => import("./pages/Host/Dashboard.jsx"));
 const Income = lazy(() => import("./pages/Host/Income.jsx"));
 const Reviews = lazy(() => import("./pages/Host/Reviews.jsx"));
-const HostLayout = lazy(() =>
-	import("./pages/Host/HostLayout/HostLayout.jsx")
-);
-const HostVans = lazy(() =>
-	import("./pages/Host/Vans/HostVans.jsx")
-);
+const HostLayout = lazy(() => import("./pages/Host/HostLayout/HostLayout.jsx"));
+const HostVans = lazy(() => import("./pages/Host/Vans/HostVans.jsx"));
 const HostVansDetail = lazy(() =>
 	import("./pages/Host/Vans/Details/HostVansLayout.jsx")
 );
@@ -38,6 +29,7 @@ const Pricing = lazy(() =>
 const Photos = lazy(() =>
 	import("./pages/Host/Vans/Details/Photos/Photos.jsx")
 );
+const Four0four = lazy(() => import("./pages/404/404.jsx"));
 
 // Create a router using createBrowserRouter
 const router = createBrowserRouter([
@@ -47,6 +39,7 @@ const router = createBrowserRouter([
 		children: [
 			{ path: "/", element: <Home /> },
 			{ path: "about", element: <About /> },
+			{ path: "*", element: <Four0four /> },
 			/** NOTE: Nested routes
 			 * If there's no component shared,
 				 there's no need for nesting.
