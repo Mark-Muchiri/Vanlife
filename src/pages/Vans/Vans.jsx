@@ -4,11 +4,14 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { getVans } from "../../api.js";
+import Loading from "../../components/Loading";
 
 function Vans() {
 	// State to hold the fetched data
 	const [data, setData] = useState([]);
-
+	// Loading state
+	const [loading, setLoading] = useState(false);
 	// Using useSearchParams hook to access the URL search parameters
 	const [searchParams, setSearchParams] = useSearchParams();
 	// Extracting the 'type' filter from the URL query parameters
@@ -17,12 +20,14 @@ function Vans() {
 	// useEffect to fetch data when the component mounts
 	useEffect(() => {
 		// Async function to fetch van data
-		async function getVans() {
-			const res = await fetch("/api/vans");
-			const data = await res.json();
-			setData(data.vans);
+		// from api.js
+		async function loadVans() {
+			setLoading(true);
+			const data = await getVans();
+			setData(data);
+			setLoading(false);
 		}
-		getVans();
+		loadVans();
 	}, []);
 
 	// Function to handle changes in the filter parameters
@@ -93,6 +98,11 @@ filter item and create corresponding filter buttons */
 			</Link>
 		</div>
 	));
+
+	// Loading animation
+	if (loading) {
+		return <Loading />;
+	}
 
 	return (
 		<>
