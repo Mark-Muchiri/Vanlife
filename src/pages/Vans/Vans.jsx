@@ -12,6 +12,8 @@ function Vans() {
 	const [data, setData] = useState([]);
 	// Loading state
 	const [loading, setLoading] = useState(false);
+	// error state
+	const [error, setError] = useState(null);
 	// Using useSearchParams hook to access the URL search parameters
 	const [searchParams, setSearchParams] = useSearchParams();
 	// Extracting the 'type' filter from the URL query parameters
@@ -23,9 +25,14 @@ function Vans() {
 		// from api.js
 		async function loadVans() {
 			setLoading(true);
-			const data = await getVans();
-			setData(data);
-			setLoading(false);
+			try {
+				const data = await getVans();
+				setData(data);
+			} catch (err) {
+				setError(err);
+			} finally {
+				setLoading(false);
+			}
 		}
 		loadVans();
 	}, []);
@@ -99,10 +106,16 @@ filter item and create corresponding filter buttons */
 		</div>
 	));
 
-	// Loading animation
+	// Loading handler 
 	if (loading) {
 		return <Loading />;
 	}
+
+	// error handler
+	if (error) {
+		return <h1>There was an error: {error.message}</h1>;
+	}
+
 
 	return (
 		<>
