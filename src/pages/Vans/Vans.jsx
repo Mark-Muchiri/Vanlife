@@ -7,6 +7,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { getVans } from "../../api.js";
 import Loading from "../../components/Loading";
 
+
 function Vans() {
 	// State to hold the fetched data
 	const [data, setData] = useState([]);
