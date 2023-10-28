@@ -1,11 +1,10 @@
 // Import necessary CSS file and required hooks from React
 import "./Vans.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useLoaderData, useSearchParams } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { getVans } from "../../api.js";
-import Loading from "../../components/Loading";
 /**
  * Challenge: Use the vans data that came in from useLoaderData
  * instead of the state and useEffect
