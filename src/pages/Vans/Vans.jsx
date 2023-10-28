@@ -1,16 +1,26 @@
 // Import necessary CSS file and required hooks from React
 import "./Vans.css";
 import { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLoaderData, useSearchParams } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { getVans } from "../../api.js";
 import Loading from "../../components/Loading";
+/**
+ * Challenge: Use the vans data that came in from useLoaderData
+ * instead of the state and useEffect
+ * 1. Comment out the entire useEffect block
+ * 2. Make whatever other changes you need so it all works
+ *    again
+ */
 
+export function loader() {
+	return "vans data goes here"
+}
 
 function Vans() {
 	// State to hold the fetched data
-	const [data, setData] = useState([]);
+	const [ data, setData ] = useState([]);
 	// Loading state
 	const [loading, setLoading] = useState(false);
 	// error state
@@ -19,6 +29,9 @@ function Vans() {
 	const [searchParams, setSearchParams] = useSearchParams();
 	// Extracting the 'type' filter from the URL query parameters
 	const typeFilter = searchParams.get("type");
+	// Loading data
+	const dat = useLoaderData()
+	console.log(dat)
 
 	// useEffect to fetch data when the component mounts
 	useEffect(() => {
@@ -107,7 +120,7 @@ filter item and create corresponding filter buttons */
 		</div>
 	));
 
-	// Loading handler 
+	// Loading handler
 	if (loading) {
 		return <Loading />;
 	}
@@ -116,7 +129,6 @@ filter item and create corresponding filter buttons */
 	if (error) {
 		return <h1>There was an error: {error.message}</h1>;
 	}
-
 
 	return (
 		<>
