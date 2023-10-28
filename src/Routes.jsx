@@ -5,13 +5,15 @@ import { lazy, Suspense } from "react";
 import "./server.js";
 
 // Import necessary page components
-const Loading = lazy(() => import("./components/Loading.jsx"));
+const Vans = lazy(() => import("./pages/Vans/Vans.jsx"));
+// Import the vansLoader function from Vans.jsx
+import { loader as vansLoader } from "./pages/Vans/Vans.jsx";
 // import Loading from "./components/Loading.jsx";
+const Loading = lazy(() => import("./components/Loading.jsx"));
 const Layout = lazy(() => import("./components/Layout.jsx"));
 const About = lazy(() => import("./pages/About/About.jsx"));
 const Home = lazy(() => import("./pages/Home/Home.jsx"));
 const VanDetail = lazy(() => import("./pages/VanDetail/VanDetail.jsx"));
-const Vans = lazy(() => import("./pages/Vans/Vans.jsx"));
 const Dashboard = lazy(() => import("./pages/Host/Dashboard.jsx"));
 const Income = lazy(() => import("./pages/Host/Income.jsx"));
 const Reviews = lazy(() => import("./pages/Host/Reviews.jsx"));
@@ -49,7 +51,7 @@ const router = createBrowserRouter([
 				path: "vans",
 				children: [
 					// indexed route
-					{ path: "", element: <Vans /> },
+					{ path: "", element: <Vans />, loader: vansLoader },
 					{ path: ":id", element: <VanDetail /> },
 				],
 			},

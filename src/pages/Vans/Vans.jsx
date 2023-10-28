@@ -15,14 +15,14 @@ import Loading from "../../components/Loading";
  */
 
 export function loader() {
-	return "vans data goes here"
+	return getVans()
 }
 
 function Vans() {
 	// State to hold the fetched data
-	const [ data, setData ] = useState([]);
+	// const [ data, setData ] = useState([]);
 	// Loading state
-	const [loading, setLoading] = useState(false);
+	// const [loading, setLoading] = useState(false);
 	// error state
 	const [error, setError] = useState(null);
 	// Using useSearchParams hook to access the URL search parameters
@@ -30,26 +30,26 @@ function Vans() {
 	// Extracting the 'type' filter from the URL query parameters
 	const typeFilter = searchParams.get("type");
 	// Loading data
-	const dat = useLoaderData()
-	console.log(dat)
+	const data = useLoaderData()
+	// console.log(data)
 
 	// useEffect to fetch data when the component mounts
-	useEffect(() => {
-		// Async function to fetch van data
-		// from api.js
-		async function loadVans() {
-			setLoading(true);
-			try {
-				const data = await getVans();
-				setData(data);
-			} catch (err) {
-				setError(err);
-			} finally {
-				setLoading(false);
-			}
-		}
-		loadVans();
-	}, []);
+	// useEffect(() => {
+	// 	// Async function to fetch van data
+	// 	// from api.js
+	// 	async function loadVans() {
+	// 		setLoading(true);
+	// 		try {
+	// 			const data = await getVans();
+	// 			setData(data);
+	// 		} catch (err) {
+	// 			setError(err);
+	// 		} finally {
+	// 			setLoading(false);
+	// 		}
+	// 	}
+	// 	loadVans();
+	// }, []);
 
 	// Function to handle changes in the filter parameters
 	//~ Compatible for multiple filter inputs
@@ -120,10 +120,6 @@ filter item and create corresponding filter buttons */
 		</div>
 	));
 
-	// Loading handler
-	if (loading) {
-		return <Loading />;
-	}
 
 	// error handler
 	if (error) {
