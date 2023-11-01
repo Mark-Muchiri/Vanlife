@@ -1,3 +1,4 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import "./Nav.css";
 import { NavLink, Link } from "react-router-dom";
 
@@ -42,6 +43,12 @@ const activeStyle = {
 							to='/vans'
 						>
 							Vans
+						</NavLink>
+						<NavLink className='link' to='.'>
+							<LazyLoadImage
+								effect='blur'
+								src='images/user-circle.svg'
+							/>
 						</NavLink>
 					</ul>
 				</div>
