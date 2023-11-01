@@ -5,24 +5,12 @@ import { Link, useLoaderData, useSearchParams } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { getVans } from "../../api.js";
-/**
- * Challenge: Use the vans data that came in from useLoaderData
- * instead of the state and useEffect
- * 1. Comment out the entire useEffect block
- * 2. Make whatever other changes you need so it all works
- *    again
- */
 
 export function loader() {
 	return getVans()
 }
 
 function Vans() {
-	// State to hold the fetched data
-	// const [ data, setData ] = useState([]);
-	// Loading state
-	// const [loading, setLoading] = useState(false);
-	// error state
 	const [error, setError] = useState(null);
 	// Using useSearchParams hook to access the URL search parameters
 	const [searchParams, setSearchParams] = useSearchParams();

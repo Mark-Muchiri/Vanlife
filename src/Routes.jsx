@@ -8,8 +8,9 @@ import "./server.js";
 const Vans = lazy(() => import("./pages/Vans/Vans.jsx"));
 // Import the vansLoader function from Vans.jsx
 import { loader as vansLoader } from "./pages/Vans/Vans.jsx";
+import Error from "./components/Error/Error.jsx";
 // import Loading from "./components/Loading.jsx";
-const Loading = lazy(() => import("./components/Loading.jsx"));
+const Loading = lazy(() => import("./components/Loader/Loading.jsx"));
 const Layout = lazy(() => import("./components/Layout.jsx"));
 const About = lazy(() => import("./pages/About/About.jsx"));
 const Home = lazy(() => import("./pages/Home/Home.jsx"));
@@ -51,7 +52,12 @@ const router = createBrowserRouter([
 				path: "vans",
 				children: [
 					// indexed route
-					{ path: "", element: <Vans />, loader: vansLoader },
+					{
+						path: "",
+						element: <Vans />,
+						errorElement: <Error />,
+						loader: vansLoader,
+					},
 					{ path: ":id", element: <VanDetail /> },
 				],
 			},
