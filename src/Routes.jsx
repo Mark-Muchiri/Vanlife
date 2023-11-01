@@ -6,6 +6,7 @@ import "./server.js";
 
 // Import necessary page components
 const Vans = lazy(() => import("./pages/Vans/Vans.jsx"));
+// import Vans from "./pages/Vans/Vans.jsx";
 // Import the vansLoader function from Vans.jsx
 import { loader as vansLoader } from "./pages/Vans/Vans.jsx";
 import Error from "./components/Error/Error.jsx";

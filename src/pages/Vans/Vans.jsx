@@ -11,32 +11,13 @@ export function loader() {
 }
 
 function Vans() {
-	const [error, setError] = useState(null);
+	const [error] = useState(null);
 	// Using useSearchParams hook to access the URL search parameters
 	const [searchParams, setSearchParams] = useSearchParams();
-	// Extracting the 'type' filter from the URL query parameters
-	const typeFilter = searchParams.get("type");
 	// Loading data
 	const data = useLoaderData()
-	// console.log(data)
-
-	// useEffect to fetch data when the component mounts
-	// useEffect(() => {
-	// 	// Async function to fetch van data
-	// 	// from api.js
-	// 	async function loadVans() {
-	// 		setLoading(true);
-	// 		try {
-	// 			const data = await getVans();
-	// 			setData(data);
-	// 		} catch (err) {
-	// 			setError(err);
-	// 		} finally {
-	// 			setLoading(false);
-	// 		}
-	// 	}
-	// 	loadVans();
-	// }, []);
+	// Extracting the 'type' filter from the URL query parameters
+	const typeFilter = searchParams.get("type");
 
 	// Function to handle changes in the filter parameters
 	//~ Compatible for multiple filter inputs
