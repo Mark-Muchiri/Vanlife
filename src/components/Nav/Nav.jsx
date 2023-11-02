@@ -44,7 +44,7 @@ function Nav() {
 						>
 							Vans
 						</NavLink>
-						<NavLink className='link' to='/signin'>
+						<NavLink className='link' to='/login'>
 							<LazyLoadImage effect='blur' src='images/user-circle.svg' />
 						</NavLink>
 					</ul>

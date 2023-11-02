@@ -10,7 +10,6 @@ const Vans = lazy(() => import("./pages/Vans/Vans.jsx"));
 // Import the vansLoader function from Vans.jsx
 import { loader as vansLoader } from "./pages/Vans/Vans.jsx";
 import Error from "./components/Error/Error.jsx";
-import SignIn from "./pages/SignIn/SignIn.jsx";
 // import Loading from "./components/Loading.jsx";
 const Loading = lazy(() => import("./components/Loader/Loading.jsx"));
 const Layout = lazy(() => import("./components/Layout.jsx"));
@@ -22,6 +21,8 @@ const Income = lazy(() => import("./pages/Host/Income.jsx"));
 const Reviews = lazy(() => import("./pages/Host/Reviews.jsx"));
 const HostLayout = lazy(() => import("./pages/Host/HostLayout/HostLayout.jsx"));
 const HostVans = lazy(() => import("./pages/Host/Vans/HostVans.jsx"));
+const Four0four = lazy(() => import("./pages/404/404.jsx"));
+const Login = lazy(() => import("./pages/Login/Login.jsx"));
 const HostVansDetail = lazy(() =>
 	import("./pages/Host/Vans/Details/HostVansLayout.jsx")
 );
@@ -34,7 +35,6 @@ const Pricing = lazy(() =>
 const Photos = lazy(() =>
 	import("./pages/Host/Vans/Details/Photos/Photos.jsx")
 );
-const Four0four = lazy(() => import("./pages/404/404.jsx"));
 
 // Create a router using createBrowserRouter
 const router = createBrowserRouter([
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
 		children: [
 			{ path: "/", element: <Home /> },
 			{ path: "about", element: <About /> },
-			{ path: "/signin", element: <SignIn /> },
+			{ path: "/login", element: <Login /> },
 			{ path: "*", element: <Four0four /> },
 			/** NOTE: Nested routes
 			 * If there's no component shared,
