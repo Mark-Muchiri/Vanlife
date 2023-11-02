@@ -3,14 +3,14 @@ import "./Nav.css";
 import { NavLink, Link } from "react-router-dom";
 
 function Nav() {
-const activeStyle = {
-	all: "unset",
-	textDecoration: "underline",
-	fontFamily: "Inter",
-	fontWeight: "900",
-	color: "#df8b37",
-	cursor: "pointer",
-};
+	const activeStyle = {
+		all: "unset",
+		textDecoration: "underline",
+		fontFamily: "Inter",
+		fontWeight: "900",
+		color: "#df8b37",
+		cursor: "pointer",
+	};
 
 	return (
 		<>
@@ -44,11 +44,8 @@ const activeStyle = {
 						>
 							Vans
 						</NavLink>
-						<NavLink className='link' to='.'>
-							<LazyLoadImage
-								effect='blur'
-								src='images/user-circle.svg'
-							/>
+						<NavLink className='link' to='/signin'>
+							<LazyLoadImage effect='blur' src='images/user-circle.svg' />
 						</NavLink>
 					</ul>
 				</div>

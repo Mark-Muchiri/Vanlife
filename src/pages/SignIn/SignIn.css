@@ -1,0 +1,93 @@
+.signin-container {
+  margin-left: 27px;
+  margin-right: 27px;
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+.signin-container h2 {
+  all: unset;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #161616;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.all-inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.all-inputs #input1 {
+  padding: 9px 13px;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 6px 6px 0px 0px;
+  background: #FFF;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  border: 1px solid #D1D5DB;
+}
+
+.all-inputs #input2 {
+  padding: 9px 13px;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 0px 0px 6px 6px;
+  background: #FFF;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  border: 1px solid #D1D5DB;
+}
+
+.signinbutton {
+  width: 100%;
+  height: 49.832px;
+  border-style: unset;
+  border-radius: 5px;
+  background: #FF8C38;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.signinbutton:active {
+  background: #FF6B00;
+}
+
+.signinbutton p {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.signin-container .new-acc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding-top: 45px;
+}
+
+.new-acc p {
+  color: #161616;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.new-acc a {
+  all: unset;
+  cursor: pointer;
+  color: #FF8C38;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 24px;
+}
