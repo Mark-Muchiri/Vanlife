@@ -24,8 +24,8 @@ function HostVansID() {
 	const params = useParams();
 
 	// state that holds fetched data
-	const [hostVanDetail, setHostVanDetail] = useState([]);
-
+	const [ hostVanDetail, setHostVanDetail ] = useState([]);
+	
 	// useEffect to fetch data when the component mounts,
 	// or when params.id changes
 	useEffect(() => {
