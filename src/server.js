@@ -1,6 +1,5 @@
 import { createServer, Model, Response } from "miragejs";
 
-
 createServer({
     models: {
         vans: Model,
