@@ -4,11 +4,6 @@ import { useState } from "react";
 import { Link, useLoaderData, useSearchParams } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import { getVans } from "../../api.js";
-
-export function loader() {
-	return getVans()
-}
 
 function Vans() {
 	const [error] = useState(null);

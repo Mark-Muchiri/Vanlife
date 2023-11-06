@@ -8,7 +8,7 @@ import "./server.js";
 const Vans = lazy(() => import("./pages/Vans/Vans.jsx"));
 // import Vans from "./pages/Vans/Vans.jsx";
 // Import the vansLoader function from Vans.jsx
-import { loader as vansLoader } from "./pages/Vans/Vans.jsx";
+import { loader as vansLoader } from "./pages/Vans/LoaderData.js";
 import Error from "./components/Error/Error.jsx";
 // import Loading from "./components/Loading.jsx";
 const Loading = lazy(() => import("./components/Loader/Loading.jsx"));
