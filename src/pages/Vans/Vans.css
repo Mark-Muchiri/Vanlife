@@ -35,7 +35,7 @@ main>h1 {
 .filters>.filter-button:hover {
   cursor: pointer;
   background: #FFD699;
-  /* New background color on hover */
+  text-decoration: none;
 }
 
 /* Change the background color when clicked */
@@ -47,13 +47,13 @@ main>h1 {
 
 /* Change the background color for the active filter */
 .filters>.filter-button.active {
-  background: #000000;
+  background: #FFD699;
   /* New background color for the active filter */
 }
 
 /* Change the text color for the active filter */
 .filters>.filter-button.active>p {
-  color: #FFD699;
+  color: #4D4D4D;
 }
 
 .filters>.filter-button>p {
