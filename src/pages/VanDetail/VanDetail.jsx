@@ -1,12 +1,10 @@
 // Import the necessary CSS file and required hooks from React
 import "./VanDetail.css";
-import { Link, useLoaderData, useLocation, useParams } from "react-router-dom";
+import { Link, useLoaderData, useLocation } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 function VanDetail() {
-	// Extract the parameters from the URL
-	const params = useParams();
 	// Access the current location using the useLocation hook
 	const location = useLocation();
 	// State to hold the fetched data
