@@ -1,7 +1,6 @@
 // Import the necessary CSS file and required hooks from React
 import "./VanDetail.css";
-import { Link, useLocation, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, useLoaderData, useLocation, useParams } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
@@ -11,20 +10,7 @@ function VanDetail() {
 	// Access the current location using the useLocation hook
 	const location = useLocation();
 	// State to hold the fetched data
-	const [van, setVan] = useState([]);
-
-	// useEffect to fetch data when the component mounts
-	useEffect(() => {
-		async function getVan() {
-			// Fetch van data from the API based on the ID parameter
-			const res = await fetch(`/api/vans/${params.id}`);
-			const data = await res.json();
-			setVan(data.vans);
-		}
-		// Call the getVan function to retrieve the van details
-		getVan();
-		// Watch for changes in the 'params.id' dependency
-	}, [params.id]);
+	const van = useLoaderData()[0]
 
 	// Extract the search parameters from the location state
 	const search = location.state?.search || "";
