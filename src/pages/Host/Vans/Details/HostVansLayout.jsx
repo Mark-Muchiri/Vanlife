@@ -102,7 +102,7 @@ function HostVansID() {
 				</div>
 				<br />
 				{/* Children components */}
-				<Outlet context={[hostVanDetail]} />
+				<Outlet context={hostVanDetail} />
 			</div>
 		</>
 	);

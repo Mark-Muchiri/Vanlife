@@ -76,8 +76,12 @@ const router = createBrowserRouter([
 					// This makes it an indexed route
 					{ path: "", element: <Dashboard /> },
 					{ path: "income", element: <Income /> },
-					{ path: "vans", element: <HostVans /> },
 					{ path: "reviews", element: <Reviews /> },
+					{
+						path: "vans",
+						element: <HostVans />,
+						loader: vanhostLoader,
+					},
 					{
 						path: "vans/:id",
 						element: <HostVansDetail />,

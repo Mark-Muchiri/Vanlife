@@ -3,8 +3,7 @@ import "./HotDetails.css";
 
 function HostDetails() {
 	// state that holds fetched data
-	const [hostVanDetail] = useOutletContext();
-
+	const hostVanDetail = useOutletContext();
 	return (
 		<>
 			<p className='host-vans-description'>

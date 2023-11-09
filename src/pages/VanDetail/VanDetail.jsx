@@ -57,7 +57,7 @@ function VanDetail() {
 						<p>{van.description}</p>
 					</div>
 					{/* Link to rent the van */}
-					<Link to='/vans'>
+					<Link to='.'>
 						<button className='rentvanbutton'>
 							<p>Rent this van</p>
 						</button>

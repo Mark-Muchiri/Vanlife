@@ -3,7 +3,7 @@ import "./Pricing.css";
 
 function Pricing() {
 	// state that holds fetched data
-	const [hostVanDetail] = useOutletContext();
+	const hostVanDetail = useOutletContext();
 
 	return (
 		<>

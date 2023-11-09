@@ -1,20 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import "./HostVans.css";
-import { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 function HostVans() {
-	const [ hostVans, setHostVans ] = useState([]);
-	// useEffect to fetch data when the component mounts
-	useEffect(() => {
-		async function getVans() {
-			const res = await fetch("/api/host/vans");
-			const data = await res.json();
-			setHostVans(data.vans);
-		}
-		getVans();
-	}, []);
+	const hostVans = useLoaderData()
 	// Map through the vans data
 	const ListedVans = hostVans.map((van) => (
 		<div key={van.hostId} className='hostvancont'>

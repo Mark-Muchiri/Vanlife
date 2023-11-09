@@ -5,7 +5,7 @@ import "./Photos.css";
 
 function Photos() {
 	// state that holds fetched data
-	const [hostVanDetail] = useOutletContext();
+	const hostVanDetail = useOutletContext();
 
 	return (
 		<>
