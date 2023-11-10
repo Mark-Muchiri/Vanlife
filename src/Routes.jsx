@@ -1,11 +1,12 @@
 // Import necessary components and modules
-import { RouterProvider, createBrowserRouter, redirect } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { lazy, Suspense } from "react";
 // Import server file
 import "./server.js";
+import { redirect } from "./redirectUtil.js";
 
 // Import necessary page components
-// import { requireAuth } from "./utils.js";
+import { requireAuth } from "./utils.js";
 import { loader as vansLoader } from "./pages/Vans/LoaderData.js";
 import { loader as vanhostLoader } from "./pages/Host/Vans/Details/LoaderData.js";
 import Error from "./components/Error/Error.jsx";
@@ -76,13 +77,8 @@ const router = createBrowserRouter([
 					{
 						path: "",
 						element: <Dashboard />,
-						loader: async () => {
-							const isLoggedIn = false;
-							if (!isLoggedIn) {
-								throw redirect('/login');
-							}
-							return null;
-						},
+						// "react-router-dom": "^6.16.0",
+						loader: requireAuth,
 					},
 					{
 						path: "income",
