@@ -1,6 +1,7 @@
 import { getHostVans } from "../../../../api.js";
+import { requireAuth } from "../../../../utils.js";
 
-export function loader({ params }) {
-  console.log(params.id)
+export async function loader({ params }) {
+  await requireAuth()
   return getHostVans(params.id);
 }

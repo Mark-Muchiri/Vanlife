@@ -1,5 +1,5 @@
 import { getVans } from "../../api.js"
 
-export function loader() {
+export async function loader() {
 	return getVans()
 }

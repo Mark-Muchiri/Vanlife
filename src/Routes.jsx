@@ -3,7 +3,6 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { lazy, Suspense } from "react";
 // Import server file
 import "./server.js";
-import { redirect } from "./redirectUtil.js";
 
 // Import necessary page components
 import { requireAuth } from "./utils.js";
@@ -78,15 +77,17 @@ const router = createBrowserRouter([
 						path: "",
 						element: <Dashboard />,
 						// "react-router-dom": "^6.16.0",
-						loader: requireAuth,
+						loader: async () => await requireAuth(),
 					},
 					{
 						path: "income",
 						element: <Income />,
+						loader: async () => await requireAuth(),
 					},
 					{
 						path: "reviews",
 						element: <Reviews />,
+						loader: async () => await requireAuth(),
 					},
 					{
 						path: "vans",
