@@ -13,7 +13,7 @@ function Vans() {
 	const data = useLoaderData()
 	// Extracting the 'type' filter from the URL query parameters
 	const typeFilter = searchParams.get("type");
-
+	
 	// Function to handle changes in the filter parameters
 	//~ Compatible for multiple filter inputs
 	function handleFilterChange(key, value) {

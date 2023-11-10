@@ -21,7 +21,7 @@ function HostVansID() {
 	};
 
 	// state that holds fetched data
-	const hostVanDetail = useLoaderData()[0]
+	const hostVanDetail = useLoaderData()
 
 	// Returning the JSX elements to be rendered
 	return (
