@@ -1,16 +1,11 @@
 // Import necessary components and modules
-import {
-	Route,
-	RouterProvider,
-	createBrowserRouter,
-	createRoutesFromElements,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter, redirect } from "react-router-dom";
 import { lazy, Suspense } from "react";
 // Import server file
 import "./server.js";
 
 // Import necessary page components
-import { requireAuth } from "./utils.js";
+// import { requireAuth } from "./utils.js";
 import { loader as vansLoader } from "./pages/Vans/LoaderData.js";
 import { loader as vanhostLoader } from "./pages/Host/Vans/Details/LoaderData.js";
 import Error from "./components/Error/Error.jsx";
@@ -40,49 +35,91 @@ const Photos = lazy(() =>
 	import("./pages/Host/Vans/Details/Photos/Photos.jsx")
 );
 
-const router = createBrowserRouter(
-	createRoutesFromElements(
-		<Route path='/' element={<Layout />}>
-			<Route index element={<Home />} />
-			<Route path='about' element={<About />} />
-			<Route path='login' element={<Login />} />
-			<Route
-				path='vans'
-				element={<Vans />}
-				errorElement={<Error />}
-				loader={vansLoader}
-			/>
-			<Route path='vans/:id' element={<VanDetail />} loader={vansLoader} />
-			<Route path='host' element={<HostLayout />}>
-				<Route
-					index
-					element={<Dashboard />}
-					loader={async () => await requireAuth()}
-				/>
-				<Route path='income' element={<Income />} />
-				<Route path='reviews' element={<Reviews />} />
-				<Route path='vans' element={<HostVans />} loader={vanhostLoader} />
-				<Route
-					path='vans/:id'
-					element={<HostVansDetail />}
-					loader={vanhostLoader}
-				>
-					<Route index element={<HostDetails />} />
-					<Route path='pricing' element={<Pricing />} />
-					<Route path='photos' element={<Photos />} />
-				</Route>
-			</Route>
-			<Route path='*' element={<Four0four />} />
-		</Route>
-	)
-);
+// Create a router using createBrowserRouter
+const router = createBrowserRouter([
+	{
+		// Use Layout component as the top-level wrapper
+		element: <Layout />,
+		children: [
+			{ path: "/", element: <Home /> },
+			{ path: "about", element: <About /> },
+			{ path: "/login", element: <Login /> },
+			{ path: "*", element: <Four0four /> },
+			/** NOTE: Nested routes
+			 * If there's no component shared,
+				 there's no need for nesting.
+			 * I've nested vans for practice sake
+			 */
+			{
+				path: "vans",
+				children: [
+					// indexed route
+					{
+						path: "",
+						element: <Vans />,
+						errorElement: <Error />,
+						loader: vansLoader,
+					},
+					{
+						path: ":id",
+						element: <VanDetail />,
+						loader: vansLoader,
+					},
+				],
+			},
+			{
+				path: "host",
+				element: <HostLayout />,
+				children: [
+					// Changed path to an empty string for Dashboard
+					// This makes it an indexed route
+					{
+						path: "",
+						element: <Dashboard />,
+						loader: async () => {
+							const isLoggedIn = false;
+							if (!isLoggedIn) {
+								throw redirect('/login');
+							}
+							return null;
+						},
+					},
+					{
+						path: "income",
+						element: <Income />,
+					},
+					{
+						path: "reviews",
+						element: <Reviews />,
+					},
+					{
+						path: "vans",
+						element: <HostVans />,
+						loader: vanhostLoader,
+					},
+					{
+						path: "vans/:id",
+						element: <HostVansDetail />,
+						loader: vanhostLoader,
+						children: [
+							{ path: "", element: <HostDetails /> },
+							{ path: "pricing", element: <Pricing /> },
+							{ path: "photos", element: <Photos /> },
+						],
+					},
+				],
+			},
+		],
+	},
+]);
 
+// Define the Routes component
 function AppRoutes() {
+	// Provide the router to the RouterProvider
 	return (
 		<Suspense fallback={<Loading />}>
 			<RouterProvider router={router} />
 		</Suspense>
 	);
 }
-
 export default AppRoutes;
