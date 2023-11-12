@@ -1,16 +1,10 @@
-import { Link } from "react-router-dom";
-import React from "react";
+import { Link, useLoaderData } from "react-router-dom";
+import { useState } from "react";
 import "./Login.css";
 
-/**
- * Challenge: Pass a message from the requireAuth function
- * that says "You must log in first." and display that message
- * in an <h2> BELOW the <h1>. Give it a classname of "red" for
- * some quick styling - (I added the CSS already).
- */
-
 function SignIn() {
-	const [loginFormData, setLoginFormData] = React.useState({
+	const message = useLoaderData();
+	const [loginFormData, setLoginFormData] = useState({
 		email: "",
 		password: "",
 	});
@@ -31,7 +25,12 @@ function SignIn() {
 	return (
 		<>
 			<div className='signin-container'>
-				<h2>Sign in to your account</h2>
+				<h2>Login to your account</h2>
+				{message && (
+					<div className='warning'>
+						<p>{message}</p>
+					</div>
+				)}
 				<div className='all-inputs'>
 					<form onSubmit={handleSubmit}>
 						<input
@@ -54,7 +53,7 @@ function SignIn() {
 				</div>
 				<Link to='.'>
 					<button className='signinbutton'>
-						<p>Sign In</p>
+						<p>Login</p>
 					</button>
 				</Link>
 				<div className='new-acc'>

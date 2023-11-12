@@ -91,3 +91,21 @@
   font-weight: 700;
   line-height: 24px;
 }
+
+.warning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  margin-bottom: -35px;
+  margin-top: -5px;
+}
+
+.warning p {
+  all: unset;
+  cursor: pointer;
+  color: rgb(202, 0, 0);
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 24px;
+}
