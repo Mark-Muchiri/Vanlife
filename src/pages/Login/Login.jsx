@@ -2,6 +2,20 @@ import { Link, useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import "./Login.css";
 
+/**
+ * Challenge: hook up our form so it (halfway) works.
+ *
+ * 1. Pull in the `loginUser` function from the api.js file
+ * 2. Call loginUser when the form is submitted and console.log
+ *    the data that comes back. Use "b@b.com" as the username and
+ *    "p123" as the password.
+ *
+ *    NOTE: loginUser returns a promise, so you'll need
+ *    a .then(data => {...}) to access the data, or use
+ *    a separate aync function defined inside handleSubmit
+ * 3. TBA
+ */
+
 function SignIn() {
 	const message = useLoaderData();
 	const [loginFormData, setLoginFormData] = useState({
@@ -31,31 +45,35 @@ function SignIn() {
 						<p>{message}</p>
 					</div>
 				)}
-				<div className='all-inputs'>
-					<form onSubmit={handleSubmit}>
-						<input
-							id='input1'
-							name='email'
-							type='email'
-							placeholder='Email address'
-							value={loginFormData.email}
-							onChange={handleChange}
-						/>
-						<input
-							id='input2'
-							name='password'
-							type='password'
-							placeholder='Password'
-							value={loginFormData.password}
-							onChange={handleChange}
-						/>
-					</form>
-				</div>
-				<Link to='.'>
-					<button className='signinbutton'>
-						<p>Login</p>
-					</button>
-				</Link>
+				<form onSubmit={handleSubmit}>
+					<div className='all-inputs'>
+						<div className=''>
+							<input
+								className='input1'
+								name='email'
+								type='email'
+								placeholder='Email address'
+								value={loginFormData.email}
+								onChange={handleChange}
+							/>
+						</div>
+						<div className=''>
+							<input
+								className='input2'
+								name='password'
+								type='password'
+								placeholder='Password'
+								value={loginFormData.password}
+								onChange={handleChange}
+							/>
+						</div>
+					</div>
+					<Link to='.'>
+						<button className='signinbutton'>
+							<p>Login</p>
+						</button>
+					</Link>
+				</form>
 				<div className='new-acc'>
 					<p>{`Don't have a account?`}</p>
 					<Link to='.'>Create one now</Link>
