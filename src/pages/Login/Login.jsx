@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import "./Login.css";
+import { loginUser } from "../../api";
 
 /**
  * Challenge: hook up our form so it (halfway) works.
@@ -25,7 +26,7 @@ function SignIn() {
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		console.log(loginFormData);
+		loginUser(loginFormData).then((data) => console.log(data));
 	}
 
 	function handleChange(e) {
@@ -47,32 +48,26 @@ function SignIn() {
 				)}
 				<form onSubmit={handleSubmit}>
 					<div className='all-inputs'>
-						<div className=''>
-							<input
-								className='input1'
-								name='email'
-								type='email'
-								placeholder='Email address'
-								value={loginFormData.email}
-								onChange={handleChange}
-							/>
-						</div>
-						<div className=''>
-							<input
-								className='input2'
-								name='password'
-								type='password'
-								placeholder='Password'
-								value={loginFormData.password}
-								onChange={handleChange}
-							/>
-						</div>
+						<input
+							className='email'
+							name='email'
+							type='email'
+							placeholder='Email address'
+							value={loginFormData.email}
+							onChange={handleChange}
+						/>
+						<input
+							className='password'
+							name='password'
+							type='password'
+							placeholder='Password'
+							value={loginFormData.password}
+							onChange={handleChange}
+						/>
 					</div>
-					<Link to='.'>
-						<button className='signinbutton'>
-							<p>Login</p>
-						</button>
-					</Link>
+					<button className='signinbutton'>
+						<p>Login</p>
+					</button>
 				</form>
 				<div className='new-acc'>
 					<p>{`Don't have a account?`}</p>

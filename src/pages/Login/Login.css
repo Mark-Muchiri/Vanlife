@@ -26,7 +26,7 @@
   margin-bottom: 30px;
 }
 
-.input1 {
+.all-inputs .email {
   width: 100%;
   padding: 9px 13px;
   align-items: center;
@@ -37,7 +37,7 @@
   border: 1px solid #D1D5DB;
 }
 
-.input2 {
+.all-inputs .password {
   width: 100%;
   padding: 9px 13px;
   align-items: center;
