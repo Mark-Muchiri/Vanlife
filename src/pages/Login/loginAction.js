@@ -10,6 +10,9 @@ export async function loginAction({ request }) {
       password
     }
   );
-  console.log(data);
+  console.log("Login actions", data);
+  localStorage.setItem("loginKey", true);
+  const loginKey = localStorage.getItem("loginKey");
+  console.log("login key", loginKey);
   return null;
 }

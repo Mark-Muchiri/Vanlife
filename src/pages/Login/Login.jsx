@@ -4,14 +4,12 @@ import "./Login.css";
 import { loginUser } from "@/api.js";
 
 /**
- * Challenge: Start implementing actions to handle our
- * form data
- *
- * 1. Replace <form> with <Form> from React Router
- * 2. Add a `method` prop to the <Form>.
- * 3. Create an action function in this file. It should just log
- *    "Action function" to the console and `return null` for now.
- * 4. Register the action function on the <Route>
+ * Challenge: save the logged in state to localStorage
+ * 1. When the user logs in, save a key called "loggedin"
+ *    to localStorage, and set it to `true`.
+ * 2. In requireAuth, check if the value of "loggedin" in 
+ *    localStorage is `true` instead of hardcoding it like
+ *    it is currently
  */
 
 function SignIn() {
