@@ -3,15 +3,6 @@ import { useState } from "react";
 import "./Login.css";
 import { loginUser } from "@/api.js";
 
-/**
- * Challenge: save the logged in state to localStorage
- * 1. When the user logs in, save a key called "loggedin"
- *    to localStorage, and set it to `true`.
- * 2. In requireAuth, check if the value of "loggedin" in 
- *    localStorage is `true` instead of hardcoding it like
- *    it is currently
- */
-
 function SignIn() {
 	const message = useLoaderData();
 	const [status, setStatus] = useState("idle");
