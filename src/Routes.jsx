@@ -8,7 +8,7 @@ import "@/server.js";
 import { requireAuth } from "./utils.js";
 import { loader as vansLoader } from "@pages/Vans/LoaderData.js";
 import { loader as vanhostLoader } from "@pages/Host/Vans/Details/LoaderData.js";
-import { loginLoader } from "@pages/Login/loginLoader.js";
+import { loginAction } from "@pages/Login/loginAction.js";
 import Error from "@components/Error/Error.jsx";
 const Vans = lazy(() => import("@pages/Vans/Vans.jsx"));
 const Loading = lazy(() => import("@components/Loader/Loading.jsx"));
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
 		children: [
 			{ path: "/", element: <Home /> },
 			{ path: "about", element: <About /> },
-			{ path: "/login", element: <Login />, loader: loginLoader },
+			{ path: "/login", element: <Login />, action: loginAction },
 			{ path: "*", element: <Four0four /> },
 			/** Nested routes
 			 * If there's no component shared,

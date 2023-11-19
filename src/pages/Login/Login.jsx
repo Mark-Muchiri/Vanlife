@@ -1,33 +1,32 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Form, Link, useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import "./Login.css";
 import { loginUser } from "@/api.js";
+
+/**
+ * Challenge: Start implementing actions to handle our
+ * form data
+ *
+ * 1. Replace <form> with <Form> from React Router
+ * 2. Add a `method` prop to the <Form>.
+ * 3. Create an action function in this file. It should just log
+ *    "Action function" to the console and `return null` for now.
+ * 4. Register the action function on the <Route>
+ */
 
 function SignIn() {
 	const message = useLoaderData();
 	const [status, setStatus] = useState("idle");
 	const [error, setError] = useState(null);
-	const [loginFormData, setLoginFormData] = useState({
-		email: "",
-		password: "",
-	});
 
 	function handleSubmit(e) {
 		setStatus("submitting");
 		e.preventDefault();
 		setError(null);
-		loginUser(loginFormData)
+		loginUser()
 			.then((data) => console.log(data))
 			.catch((err) => setError(err))
 			.finally(() => setStatus("idle"));
-	}
-
-	function handleChange(e) {
-		const { name, value } = e.target;
-		setLoginFormData((prev) => ({
-			...prev,
-			[name]: value,
-		}));
 	}
 
 	return (
@@ -44,29 +43,25 @@ function SignIn() {
 						<p>{error.message}</p>
 					</div>
 				)}
-				<form onSubmit={handleSubmit}>
+				<Form method='POST'>
 					<div className='all-inputs'>
 						<input
 							className='email'
 							name='email'
 							type='email'
 							placeholder='Email address'
-							value={loginFormData.email}
-							onChange={handleChange}
 						/>
 						<input
 							className='password'
 							name='password'
 							type='password'
 							placeholder='Password'
-							value={loginFormData.password}
-							onChange={handleChange}
 						/>
 					</div>
 					<button disabled={status === "submitting"} className='signinbutton'>
 						<p>{status === "submitting" ? "Logging in..." : "Login"}</p>
 					</button>
-				</form>
+				</Form>
 				<div className='new-acc'>
 					<p>{`Don't have a account?`}</p>
 					<Link to='.'>Create one now</Link>
