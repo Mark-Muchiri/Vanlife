@@ -46,7 +46,7 @@ const router = createBrowserRouter([
 			{ path: "about", element: <About /> },
 			{ path: "/login", element: <Login />, loader: loginLoader },
 			{ path: "*", element: <Four0four /> },
-			/** NOTE: Nested routes
+			/** Nested routes
 			 * If there's no component shared,
 				 there's no need for nesting.
 			 * I've nested vans for practice sake
