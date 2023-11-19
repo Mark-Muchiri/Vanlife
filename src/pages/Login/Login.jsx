@@ -1,7 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { useState } from "react";
 import "./Login.css";
-import { loginUser } from "../../api";
+import { loginUser } from "@/api.js";
 
 function SignIn() {
 	const message = useLoaderData();
@@ -64,7 +64,7 @@ function SignIn() {
 						/>
 					</div>
 					<button disabled={status === "submitting"} className='signinbutton'>
-						<p>{status === "submitting" ? "Loghing in..." : "Login"}</p>
+						<p>{status === "submitting" ? "Logging in..." : "Login"}</p>
 					</button>
 				</form>
 				<div className='new-acc'>

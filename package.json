@@ -8,6 +8,7 @@
     "dev-local": "bunx --bun vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "bun run lint -- --fix",
     "preview": "vite preview"
   },
   "dependencies": {

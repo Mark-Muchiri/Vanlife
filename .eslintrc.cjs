@@ -7,14 +7,20 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
-  settings: { react: { version: '18.2' } },
-  plugins: ['react-refresh'],
+  ignorePatterns: [ 'dist', '.eslintrc.cjs' ],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    ecmaFeatures: {
+      jsx: true
+    },
+    sourceType: 'module'
+  },
+  settings: { react: { version: 'detect' } },
+  plugins: [ 'react-refresh', 'react-hooks', 'react' ],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
     ],
   },
-}
+};
