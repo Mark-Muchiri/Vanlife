@@ -42,7 +42,12 @@ const router = createBrowserRouter([
 		children: [
 			{ path: "/", element: <Home /> },
 			{ path: "about", element: <About /> },
-			{ path: "/login", element: <Login />, action: loginAction },
+			{
+				path: "/login",
+				element: <Login />,
+				action: loginAction,
+				loader: loginAction,
+			},
 			{ path: "*", element: <Four0four /> },
 			/** Nested routes
 			 * If there's no component shared,

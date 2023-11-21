@@ -3,11 +3,17 @@ import { useState } from "react";
 import "./Login.css";
 import { loginUser } from "@/api.js";
 
+/**
+ * Challenge: figure out how to send the user to the /host
+ * route after they successfully log in
+ */
+
 function SignIn() {
 	const message = useLoaderData();
 	const [status, setStatus] = useState("idle");
 	const [error, setError] = useState(null);
 
+	// eslint-disable-next-line no-unused-vars
 	function handleSubmit(e) {
 		setStatus("submitting");
 		e.preventDefault();
@@ -22,11 +28,13 @@ function SignIn() {
 		<>
 			<div className='signin-container'>
 				<h2>Login to your account</h2>
+				{/* Login prompt */}
 				{message && (
 					<div className='warning'>
 						<p>{message}</p>
 					</div>
 				)}
+				{/* Error prompt */}
 				{error && (
 					<div className='warning'>
 						<p>{error.message}</p>
