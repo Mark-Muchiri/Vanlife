@@ -10,6 +10,7 @@ import { loader as vansLoader } from "@pages/Vans/LoaderData.js";
 import { loader as vanhostLoader } from "@pages/Host/Vans/Details/LoaderData.js";
 import { loginAction, loginLoader } from "@pages/Login/loginAction.js";
 import Error from "@components/Error/Error.jsx";
+// lazy loaded components
 const Vans = lazy(() => import("@pages/Vans/Vans.jsx"));
 const Loading = lazy(() => import("@components/Loader/Loading.jsx"));
 const Layout = lazy(() => import("@components/Layout.jsx"));
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
 				path: "/login",
 				element: <Login />,
 				action: loginAction,
-				loader: loginLoader
+				loader: loginLoader,
 			},
 			{ path: "*", element: <Four0four /> },
 			/** Nested routes
