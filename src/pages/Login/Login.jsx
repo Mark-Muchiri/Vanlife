@@ -1,26 +1,35 @@
-import { Form, Link, useLoaderData } from "react-router-dom";
+import {
+	Form,
+	Link,
+	useActionData,
+	useLoaderData,
+	useNavigate,
+} from "react-router-dom";
 import { useState } from "react";
 import "./Login.css";
 import { loginUser } from "@/api.js";
 
 /**
- * Challenge: figure out how to send the user to the /host
- * route after they successfully log in
+ * Challenge: Remove error handling from the component state
+ * and and a try...catch to the action to better handle the
+ * errors, just like we just practiced.
  */
 
 function SignIn() {
 	const message = useLoaderData();
+	const error = useActionData();
 	const [status, setStatus] = useState("idle");
-	const [error, setError] = useState(null);
+	const navigate = useNavigate();
 
 	// eslint-disable-next-line no-unused-vars
 	function handleSubmit(e) {
-		setStatus("submitting");
 		e.preventDefault();
-		setError(null);
+		setStatus("submitting");
 		loginUser()
-			.then((data) => console.log(data))
-			.catch((err) => setError(err))
+			.then((data) => {
+				console.log(data);
+				navigate("/host", { replace: true });
+			})
 			.finally(() => setStatus("idle"));
 	}
 
@@ -37,10 +46,10 @@ function SignIn() {
 				{/* Error prompt */}
 				{error && (
 					<div className='warning'>
-						<p>{error.message}</p>
+						<p>{error}</p>
 					</div>
 				)}
-				<Form method='POST'>
+				<Form method='POST' replace>
 					<div className='all-inputs'>
 						<input
 							className='email'
