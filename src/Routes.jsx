@@ -55,6 +55,7 @@ const router = createBrowserRouter([
 				 there's no need for nesting.
 			 * I've nested vans for practice sake
 			 */
+			//  FIXME: When a van is clicked, it shows the van details of id: 1 only
 			{
 				path: "vans",
 				children: [
