@@ -13,7 +13,6 @@ import { redirect } from "./redirectUtil.js";
  */
 export async function requireAuth(request) {
   const pathname = new URL(request.url).pathname;
-  console.log(pathname);
   const loginKey = localStorage.getItem("loginKey");
   const isLoggedIn = loginKey;
 
