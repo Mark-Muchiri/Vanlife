@@ -3,35 +3,14 @@ import {
 	Link,
 	useActionData,
 	useLoaderData,
-	useNavigate,
+	useNavigation,
 } from "react-router-dom";
-import { useState } from "react";
 import "./Login.css";
-import { loginUser } from "@/api.js";
-
-/**
- * Challenge: Remove error handling from the component state
- * and and a try...catch to the action to better handle the
- * errors, just like we just practiced.
- */
 
 function SignIn() {
 	const message = useLoaderData();
 	const error = useActionData();
-	const [status, setStatus] = useState("idle");
-	const navigate = useNavigate();
-
-	// eslint-disable-next-line no-unused-vars
-	function handleSubmit(e) {
-		e.preventDefault();
-		setStatus("submitting");
-		loginUser()
-			.then((data) => {
-				console.log(data);
-				navigate("/host", { replace: true });
-			})
-			.finally(() => setStatus("idle"));
-	}
+	const navigation = useNavigation();
 
 	return (
 		<>
@@ -64,8 +43,13 @@ function SignIn() {
 							placeholder='Password'
 						/>
 					</div>
-					<button disabled={status === "submitting"} className='signinbutton'>
-						<p>{status === "submitting" ? "Logging in..." : "Login"}</p>
+					<button
+						disabled={navigation.state === "submitting"}
+						className='signinbutton'
+					>
+						<p>
+							{navigation.state === "submitting" ? "Logging in..." : "Login"}
+						</p>
 					</button>
 				</Form>
 				<div className='new-acc'>

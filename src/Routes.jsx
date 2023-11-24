@@ -4,7 +4,7 @@ import { lazy, Suspense } from "react";
 // Import server file
 import "@/server.js";
 
-// Import necessary page components
+// Import functions necessary page components
 import { requireAuth } from "./utils.js";
 import { loader as vansLoader } from "@pages/Vans/LoaderData.js";
 import { loader as vanhostLoader } from "@pages/Host/Vans/Details/LoaderData.js";
@@ -82,17 +82,17 @@ const router = createBrowserRouter([
 						path: "",
 						element: <Dashboard />,
 						// "react-router-dom": "^6.16.0",
-						loader: async () => await requireAuth(),
+						loader: async ({ request }) => await requireAuth(request),
 					},
 					{
 						path: "income",
 						element: <Income />,
-						loader: async () => await requireAuth(),
+						loader: async ({ request }) => await requireAuth(request),
 					},
 					{
 						path: "reviews",
 						element: <Reviews />,
-						loader: async () => await requireAuth(),
+						loader: async ({ request }) => await requireAuth(request),
 					},
 					{
 						path: "vans",
@@ -104,9 +104,21 @@ const router = createBrowserRouter([
 						element: <HostVansDetail />,
 						loader: vanhostLoader,
 						children: [
-							{ path: "", element: <HostDetails /> },
-							{ path: "pricing", element: <Pricing /> },
-							{ path: "photos", element: <Photos /> },
+							{
+								path: "",
+								element: <HostDetails />,
+								loader: async ({ request }) => await requireAuth(request),
+							},
+							{
+								path: "pricing",
+								element: <Pricing />,
+								loader: async ({ request }) => await requireAuth(request),
+							},
+							{
+								path: "photos",
+								element: <Photos />,
+								loader: async ({ request }) => await requireAuth(request),
+							},
 						],
 					},
 				],
