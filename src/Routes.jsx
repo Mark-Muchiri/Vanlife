@@ -6,7 +6,8 @@ import "@/server.js";
 
 // Import functions necessary page components
 import { requireAuth } from "./utils.js";
-import { loader as vansLoader } from "@pages/Vans/LoaderData.js";
+import { vansLoader } from "@pages/Vans/LoaderData.js";
+import { detailsLoader } from "./pages/Vans/LoaderData.js";
 import { loader as vanhostLoader } from "@pages/Host/Vans/Details/LoaderData.js";
 import { loginAction, loginLoader } from "@pages/Login/loginAction.js";
 import Error from "@components/Error/Error.jsx";
@@ -55,7 +56,6 @@ const router = createBrowserRouter([
 				 there's no need for nesting.
 			 * I've nested vans for practice sake
 			 */
-			//  FIXME: When a van is clicked, it shows the van details of id: 1 only
 			{
 				path: "vans",
 				children: [
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
 					{
 						path: ":id",
 						element: <VanDetail />,
-						loader: vansLoader,
+						loader: detailsLoader,
 					},
 				],
 			},
