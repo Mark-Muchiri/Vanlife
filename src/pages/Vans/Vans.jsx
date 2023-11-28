@@ -5,12 +5,25 @@ import { Link, useLoaderData, useSearchParams } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
+/**
+ * Challenge: 
+ * 1. Add `defer` to the loader.
+ * 2. TBA
+ * 
+ * Reminder: 
+ * - defer takes an object representing any data you
+ *   want to have access to in the component. The value of the
+ *   object property should be a promise (which `getVans()` is
+ *   already returning.)
+ */
+
 function Vans() {
 	const [error] = useState(null);
 	// Using useSearchParams hook to access the URL search parameters
 	const [searchParams, setSearchParams] = useSearchParams();
 	// Loading data
 	const data = useLoaderData()
+	console.log(data)
 	// Extracting the 'type' filter from the URL query parameters
 	const typeFilter = searchParams.get("type");
 	
