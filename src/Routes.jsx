@@ -8,7 +8,7 @@ import "@/server.js";
 import { requireAuth } from "./utils.js";
 import { vansLoader } from "@pages/Vans/LoaderData.js";
 import { detailsLoader } from "./pages/Vans/LoaderData.js";
-import { loader as vanhostLoader } from "@pages/Host/Vans/Details/LoaderData.js";
+import { hostVansLoader } from "@pages/Host/Vans/Details/hostVansLoader.js";
 import { loginAction, loginLoader } from "@pages/Login/loginAction.js";
 import Error from "@components/Error/Error.jsx";
 // lazy loaded components
@@ -98,12 +98,12 @@ const router = createBrowserRouter([
 					{
 						path: "vans",
 						element: <HostVans />,
-						loader: vanhostLoader,
+						loader: hostVansLoader,
 					},
 					{
 						path: "vans/:id",
 						element: <HostVansDetail />,
-						loader: vanhostLoader,
+						loader: hostVansLoader,
 						children: [
 							{
 								path: "",

@@ -6,5 +6,5 @@ export async function vansLoader() {
 }
 
 export async function detailsLoader({ params }) {
-	return defer(getVans(params.id));
+	return getVans(params.id);
 }

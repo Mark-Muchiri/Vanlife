@@ -9,6 +9,7 @@ function VanDetail() {
 	const location = useLocation();
 	// State to hold the fetched data
 	const van = useLoaderData()
+	console.log(van)
 
 	// Extract the search parameters from the location state
 	const search = location.state?.search || "";
