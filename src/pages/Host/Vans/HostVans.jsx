@@ -5,18 +5,17 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 /**
  * TODO: Add defer and Await
- ** Refactor loader to to use defer
- ** Change the loader component naming
- ** Change the import name in `Routes` file
- ** conosle.log hostVans
- *
- *~ TBA: Changing `hostVans` name to `data`...
- *~ 			And more refactoting in `HostVans` file
+ *? Create an Await custom element
+ *? Create an a callback function inside it
+ *? Call the data inside the callback function `hostVans`
+ *? Put all the javascript that uses the `hostVans` name inside the function
+ *? Add a return inside the callback function
+ *? Inside the callback function add the mark-up that will conditionally render
  */
 
 function HostVans() {
 	const hostVans = useLoaderData();
-	console.log(hostVans)
+	console.log(hostVans);
 	// Map through the vans data
 	const ListedVans = hostVans.map((van) => (
 		<div key={van.hostId} className='hostvancont'>
