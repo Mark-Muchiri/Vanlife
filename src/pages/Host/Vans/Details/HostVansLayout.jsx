@@ -4,18 +4,6 @@ import { Await, Link, NavLink, Outlet, useLoaderData } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-/**
- * TODO: Add defer and Await
- ** Chnange `hostVanDetail` const to `dataPromise`
- ** Create an Await custom element
- ** Create a resolve called 'dataPromise'
- ** Create an a callback function inside it
- ** Call the data inside the callback function `hostVanDetail`
- ** Put all the javascript that uses the `hostVanDetail` name inside the function
- ** Add a return inside the callback function
- ** Inside the callback function return the mark-up that will conditionally render
- */
-
 // Defining the functional component HostVansID
 function HostVansID() {
 	const activeStyle = {
