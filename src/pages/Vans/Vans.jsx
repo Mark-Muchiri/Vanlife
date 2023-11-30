@@ -126,7 +126,9 @@ filter item and create corresponding filter buttons */
 				{/* Filters with dynamic display of active 
 				filters and clearing functionality */}
 				{/* Await function */}
-				<Await resolve={dataPromise.vans}>{renderVanElements}</Await>
+				<Await resolve={dataPromise.vans}>
+					{renderVanElements}
+				</Await>
 			</main>
 		</>
 	);
