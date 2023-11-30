@@ -11,6 +11,7 @@ import { detailsLoader } from "./pages/Vans/LoaderData.js";
 import { hostVansLoader } from "@pages/Host/Vans/Details/hostVansLoader.js";
 import { loginAction, loginLoader } from "@pages/Login/loginAction.js";
 import Error from "@components/Error/Error.jsx";
+import { Dashloader } from "./pages/Host/Dashboard.jsx";
 // lazy loaded components
 const Vans = lazy(() => import("@pages/Vans/Vans.jsx"));
 const Loading = lazy(() => import("@components/Loader/Loading.jsx"));
@@ -83,7 +84,7 @@ const router = createBrowserRouter([
 						path: "",
 						element: <Dashboard />,
 						// "react-router-dom": "^6.16.0",
-						loader: async ({ request }) => await requireAuth(request),
+						loader: Dashloader,
 					},
 					{
 						path: "income",
