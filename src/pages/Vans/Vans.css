@@ -95,6 +95,7 @@ main>h1 {
 }
 
 .van-list-container {
+  margin-left: -21px;
   padding-bottom: 40px;
   margin-top: -25px;
 }
