@@ -12,9 +12,9 @@ function Nav() {
 		cursor: "pointer",
 	};
 
-	function fakeLogOut() {
-		localStorage.removeItem("loginKey");
-	}
+	// function fakeLogOut() {
+	// 	localStorage.removeItem("loginKey");
+	// }
 
 	return (
 		<>
@@ -53,7 +53,7 @@ function Nav() {
 						</NavLink>
 					</ul>
 				</div>
-				<button onClick={fakeLogOut}>X</button>
+				{/* <button onClick={fakeLogOut}>X</button> */}
 			</nav>
 		</>
 	);

@@ -1,4 +1,4 @@
-import { redirect } from "./redirectUtil.js";
+import { redirect } from "@/redirectUtil.js";
 
 export async function requireAuth(request) {
   const pathname = new URL(request.url).pathname;

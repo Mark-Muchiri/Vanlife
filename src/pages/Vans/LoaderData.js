@@ -1,11 +1,12 @@
 import { defer } from "react-router-dom";
-import { getVans } from "../../api.js";
+import { getVan, getVans } from "@/api.js";
 
 export async function vansLoader() {
-	return defer({ vans: getVans() });
+	const getVansPromise = getVans();
+	return defer({ vans: getVansPromise });
 }
 
 export async function detailsLoader({ params }) {
-	const getVansPromise = getVans(params.id)
-	return defer({vanDetails: getVansPromise});
+	const getVanPromise = getVan(params.id);
+	return defer({ vanDetails: getVanPromise });
 }

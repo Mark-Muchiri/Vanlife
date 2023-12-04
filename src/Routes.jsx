@@ -6,9 +6,11 @@ import "@/server.js";
 
 // Import functions necessary page components
 import { requireAuth } from "./utils.js";
-import { vansLoader } from "@pages/Vans/LoaderData.js";
-import { detailsLoader } from "./pages/Vans/LoaderData.js";
-import { hostVansLoader } from "@pages/Host/Vans/Details/hostVansLoader.js";
+import { vansLoader, detailsLoader } from "@pages/Vans/LoaderData.js";
+import {
+	hostVansLoader,
+	hostVansDetailLoader,
+} from "@pages/Host/Vans/Details/hostVansLoader.js";
 import { loginAction, loginLoader } from "@pages/Login/loginAction.js";
 import Error from "@components/Error/Error.jsx";
 import { Dashloader } from "./pages/Host/Dashboard.jsx";
@@ -104,7 +106,7 @@ const router = createBrowserRouter([
 					{
 						path: "vans/:id",
 						element: <HostVansDetail />,
-						loader: hostVansLoader,
+						loader: hostVansDetailLoader,
 						children: [
 							{
 								path: "",
